@@ -48,6 +48,7 @@
   .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 
+  /* ---------- NAV ---------- */
   nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;gap:20px;height:60px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -62,6 +63,7 @@
   .toggle svg{width:16px;height:16px}
   @media(max-width:760px){.nav-links{display:none}}
 
+  /* ---------- HERO ---------- */
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;
     background:var(--deep);color:#EAF4F1;overflow:hidden}
   #sea{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -77,17 +79,22 @@
   .scrollcue::after{content:"";display:block;width:1px;height:26px;background:linear-gradient(#8FCFC0,transparent);margin:8px auto 0;animation:cue 2s infinite}
   @keyframes cue{0%{opacity:0;transform:translateY(-6px)}50%{opacity:1}100%{opacity:0;transform:translateY(6px)}}
 
+  /* ---------- SECTION SHELL ---------- */
   section{padding:88px 0;position:relative}
   .sec-head{max-width:60ch;margin-bottom:44px}
   .sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:.28em 0 .4em}
   .sec-head p{color:var(--ink-2);font-size:1.06rem}
+  .callout{background:color-mix(in srgb,var(--warn) 13%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 45%,var(--line));border-left:4px solid var(--warn);border-radius:6px;padding:16px 20px;margin-bottom:34px;font-size:.95rem;line-height:1.55;color:var(--ink)}
+  .callout strong{color:var(--ink)}
   .chapter-no{font-family:var(--mono);font-size:.78rem;letter-spacing:.2em;color:var(--coral)}
   .dropcap::first-letter{font-family:var(--serif);float:left;font-size:3.4em;line-height:.72;padding:.06em .12em 0 0;color:var(--teal-ink);font-weight:600}
 
+  /* reveal */
   .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .js .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
+  /* ---------- VERDICT ---------- */
   .verdict{background:var(--deep);color:#EAF4F1}
   .verdict .sec-head p{color:#AFD3CA}
   .verdict .eyebrow,.verdict .chapter-no{color:#7FE4CE}
@@ -98,6 +105,7 @@
   .vcard p{font-size:.92rem;color:#AFD3CA}
   .vcard .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:#7FE4CE;padding:3px 9px;border-radius:100px;display:inline-block;margin-bottom:14px}
 
+  /* ---------- COST BARS ---------- */
   .bars{margin-top:40px;display:flex;flex-direction:column;gap:16px}
   .bar-row{display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:18px}
   .bar-row .name{font-size:.9rem}
@@ -108,6 +116,7 @@
   @media(prefers-reduced-motion:reduce){.fill{transition:none}}
   @media(max-width:640px){.bar-row{grid-template-columns:1fr;gap:6px}.bar-row .amt{justify-self:start}}
 
+  /* ---------- CARD GRID ---------- */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;
     display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
@@ -150,6 +159,7 @@
   .btn.ghost:hover{border-color:var(--teal);color:var(--teal-ink)}
   .btn svg{width:13px;height:13px}
 
+  /* two-trip math */
   .math{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:48px}
   @media(max-width:720px){.math{grid-template-columns:1fr}}
   .mbox{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px}
@@ -165,6 +175,7 @@
     font-size:1.2rem;font-style:italic;line-height:1.4}
   .verdict-line b{font-style:normal}
 
+  /* deals */
   .deals{background:var(--deep-2);color:#EAF4F1}
   .deals .sec-head p,.deals .eyebrow,.deals .chapter-no{color:#9FD8CC}
   .deals .eyebrow,.deals .chapter-no{color:#7FE4CE}
@@ -185,6 +196,7 @@
   .desk a{display:block;font-family:var(--mono);font-size:.8rem;color:#9FD8CC;text-decoration:none;padding:2px 0}
   .desk a:hover{color:#fff}
 
+  /* matrix */
   .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
   table{border-collapse:collapse;width:100%;min-width:620px;font-size:.9rem}
   th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
@@ -193,6 +205,7 @@
   td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
   td .pill{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;background:var(--coral);color:#fff}
 
+  /* steps */
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
   .step{border-left:2px solid var(--teal);padding:6px 0 6px 20px}
   .step .when{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
@@ -424,6 +437,7 @@
       <h2>Everyone together, spring break.</h2>
       <p class="dropcap">Twelve adults, twelve kids from 7 to 15. The non-negotiables are a real kids club <em>and</em> a teen club — so the 15-year-olds have somewhere to be that isn't the buffet. Prices are all-in per family of four (two adults, two kids) for 7 nights, flights included.</p>
     </div>
+    <div class="callout reveal"><strong>Read the "kids stay free" fine print.</strong> The best deals — Moon Palace &amp; Hotel Xcaret (free to 17) — almost always <strong>black out spring break</strong> (Easter 2027 = March 28). Barceló, Dreams &amp; Hard Rock cut kids off at 12–13, so your 13–15-year-olds price as adults there anyway. The free-kids advantage mostly lands on the <em>summer</em> trip, not March — confirm the exact 2027 blackout dates before you bank on it.</div>
     <div class="grid">
 
       <article class="card reveal">
@@ -431,7 +445,7 @@
         <div class="card-body">
           <h3>Barceló Maya Palace</h3>
           <div class="price"><span class="val num" data-count="4300" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Kids club 4–12 + "One Disco" teen club 13–17</li><li>Free kids water park; Junior Suites sleep 5</li></ul>
+          <ul class="facts"><li>Kids club 4–12 + "One Disco" teen club 13–17</li><li>Free kids water park; Junior Suites sleep 5</li><li><strong>Kids:</strong> shallow discount to ~11; 12–13+ pay the adult rate</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>The Barcy Club instructors are engaged — Samantha especially is energetic and fun.</q></div><div class="rev gripe"><span class="lead">1/10</span><q>Aggressive timeshare pressure — wouldn't let us leave without resigning.</q> <a href="https://www.booking.com/reviews/mx/hotel/barcelo-maya-palace.html" target="_blank" rel="noopener">Booking.com</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.barcelo.com/en-us/barcelo-maya-palace/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -442,7 +456,7 @@
         <div class="card-body">
           <h3>Moon Palace Cancún</h3>
           <div class="price"><span class="val num" data-count="6050" data-prefix="$">$0</span><span class="unit">/family all-in</span><span class="conf live">Live quote</span></div>
-          <ul class="facts"><li>Kids club 4–12 + "Wired" teen club 13–17</li><li><strong>Kids &amp; teens ≤17 stay, play &amp; eat free</strong></li><li>Guaranteed connecting rooms · FlowRider &amp; wave pool</li></ul>
+          <ul class="facts"><li>Kids club 4–12 + "Wired" teen club 13–17</li><li><strong>Kids &amp; teens ≤17 stay, play &amp; eat free</strong> — but spring break is likely blacked out; confirm dates</li><li>Guaranteed connecting rooms · FlowRider &amp; wave pool</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>I've been to 28 countries and never enjoyed a trip with my kids as much.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Had to endure 24+ hours without A/C.</q> <a href="https://www.tripadvisor.com/ShowUserReviews-g150807-d219163-r796511471-Moon_Palace_Cancun-Cancun_Yucatan_Peninsula.html" target="_blank" rel="noopener">TripAdvisor</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.moonpalacecancun.com/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="tel:+18887317625">Group desk</a></div>
         </div>
@@ -453,7 +467,7 @@
         <div class="card-body">
           <h3>Barceló Bávaro Palace</h3>
           <div class="price"><span class="val num" data-count="6800" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Every family gets a true <strong>2-bedroom</strong> family suite (657 ft²)</li><li>Barcy kids club + "The Xone" teen nightclub · kids water park</li></ul>
+          <ul class="facts"><li>Every family gets a true <strong>2-bedroom</strong> family suite (657 ft²)</li><li>Barcy kids club + "The Xone" teen nightclub · kids water park</li><li><strong>Kids:</strong> under-2 free, ages 2–11 ~half price; 12+ pays adult</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>The kids Barcy pool and club is excellent; our teen sons had a great time at Xone.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Room was full of insects; the WiFi sucked.</q> <a href="https://www.booking.com/reviews/do/hotel/barcelo-bavaro-palace-deluxe.html" target="_blank" rel="noopener">Booking.com</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.barcelo.com/en-us/barcelo-bavaro-palace/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -464,7 +478,7 @@
         <div class="card-body">
           <h3>Dreams Macao Beach</h3>
           <div class="price"><span class="val num" data-count="7500" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Explorer's Club 3–12 + Core Zone teen club open to <strong>midnight</strong></li><li>Water park + lazy river · swim-up family rooms</li></ul>
+          <ul class="facts"><li>Explorer's Club 3–12 + Core Zone teen club open to <strong>midnight</strong></li><li>Water park + lazy river · swim-up family rooms</li><li><strong>Kids:</strong> ≤12 may stay free (confirm Macao is eligible); 13+ pays adult</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">10/10</span><q>Swim-up room, pools, waterslides, lazy river — suited our family perfectly.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>The food was a huge disappointment — we survived on fries and white rice.</q> <a href="https://www.busybeingshasha.com/blog/dreamsmacaobeachresort" target="_blank" rel="noopener">Family blog</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.hyattinclusivecollection.com/en/resorts-hotels/dreams/dominican-republic/macao-beach-punta-cana/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -475,7 +489,7 @@
         <div class="card-body">
           <h3>Hard Rock Punta Cana</h3>
           <div class="price"><span class="val num" data-count="8200" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Roxity Kids Club 4–12 + teen Gaming Room 13–17</li><li>Kids free + teens free with one paying adult · $200 credit</li></ul>
+          <ul class="facts"><li>Roxity Kids Club 4–12 + teen Gaming Room 13–17</li><li><strong>Kids 4–12 stay free</strong>; teens 13+ price as adults · $200 credit · spring break historically blacked out</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">9/10</span><q>The kids club was excellent — very safe, fun, and well organized.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Staying 7 nights was long when 50% of the water park wasn't operational.</q> <a href="https://www.booking.com/reviews/do/hotel/hard-rock-hotel-and-casino-punta-cana-all-inclusive.html" target="_blank" rel="noopener">Booking.com</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://hotel.hardrock.com/punta-cana/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -486,7 +500,7 @@
         <div class="card-body">
           <h3>Hotel Xcaret México</h3>
           <div class="price"><span class="val num" data-count="11200" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Tiered clubs: toddler → teens 13–17 · teen rooftop pool</li><li><strong>Unlimited access to 10+ Xcaret eco-parks</strong> bundled in</li></ul>
+          <ul class="facts"><li>Tiered clubs: toddler → teens 13–17 · teen rooftop pool</li><li><strong>Unlimited access to 10+ Xcaret eco-parks</strong> bundled in</li><li><strong>Kids:</strong> likely free to 17 with 2 adults — confirm spring-break coverage</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">10/10</span><q>Travelled with 2 kids (8 &amp; 12) and it was amazing — service, food, drinks incredible.</q></div><div class="rev gripe"><span class="lead">8/10</span><q>Couldn't secure restaurant reservations despite booking 30 days ahead; too much upsell.</q> <a href="https://www.booking.com/reviews/mx/hotel/xcaret-all-tours-amp-parks-included.html" target="_blank" rel="noopener">Booking.com</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.hotelxcaret.com/en/hotel-xcaret-mexico/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -606,7 +620,7 @@
         <div class="card-body">
           <h3>RCL Grandeur of the Seas</h3>
           <div class="price"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">/family · interior (→$5,000 balcony)</span></div>
-          <ul class="facts"><li>7-nt Western Caribbean · Costa Maya, Belize, Roatán, Cozumel</li><li>Adventure Ocean kids club + dedicated teen program</li><li>Departs your home port — zero drive, ~$18/day parking</li></ul>
+          <ul class="facts"><li>7-nt Western Caribbean · Costa Maya, Belize, Roatán, Cozumel</li><li>Adventure Ocean kids club + dedicated teen program</li><li>Departs your home port — zero drive, ~$18/day parking</li><li><strong>Kids:</strong> no kids-sail-free over spring break (blacked out Mar 5–Apr 4, 2027); kids still pay taxes + ~$130 gratuities</li><li><strong>⚠ Verify:</strong> confirm the 2027 home port &amp; itinerary — this ship may be redeployed</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">4.8★</span><q>He attended kids club every day and actually cried about leaving the cruise.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>A smaller, older, senior-skewing ship — less dedicated space for kids.</q> <a href="https://cruiseline.com/ship/grandeur-of-the-seas/review/588892" target="_blank" rel="noopener">Cruiseline.com</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.royalcaribbean.com/itinerary/7-night-western-caribbean-cruise-from-tampa-on-grandeur-GR07W635" target="_blank" rel="noopener">View sailing<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -617,7 +631,7 @@
         <div class="card-body">
           <h3>Norwegian Epic / Aqua</h3>
           <div class="price"><span class="val num" data-count="3900" data-prefix="$">$0</span><span class="unit">/family · interior (→$5,400 balcony)</span></div>
-          <ul class="facts"><li>7-nt Caribbean · Splash Academy kids + Entourage teen club</li><li>Bigger, more activity-packed ship; ~1h45 drive from Tampa</li></ul>
+          <ul class="facts"><li>7-nt Caribbean · Splash Academy kids + Entourage teen club</li><li>Bigger, more activity-packed ship; ~1h45 drive from Tampa</li><li><strong>Kids:</strong> reduced 3rd/4th-guest fare (any age), not free over spring break; + full taxes &amp; ~$20/day gratuity</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>Kids baked holiday cookies in the club; crew fantastic; Ie Bistro out of this world.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Outdated, worn furniture, and no peaceful place away from the noise.</q> <a href="https://www.cruisecritic.com/cruise/norwegian-ncl/norwegian-epic/reviews/724678" target="_blank" rel="noopener">Cruise Critic</a></div></div>
           <div class="card-cta"><a class="btn primary" href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-epic/2027-03-21/7-nights" target="_blank" rel="noopener">View sailing<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -718,6 +732,7 @@
   document.documentElement.classList.add('js');
   var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+  /* theme toggle */
   var root=document.documentElement, tg=document.getElementById('themeToggle');
   tg.addEventListener('click',function(){
     var cur=root.getAttribute('data-theme');
@@ -725,6 +740,7 @@
     root.setAttribute('data-theme', cur==='dark'?'light':'dark');
   });
 
+  /* reveal + count-up + bars */
   function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
   function countUp(el){
     var target=+el.getAttribute('data-count'), pre=el.getAttribute('data-prefix')||'';
@@ -751,6 +767,7 @@
   },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal,[data-count]').forEach(function(el){io.observe(el);});
 
+  /* hero canvas — layered sea shimmer + sun */
   var cv=document.getElementById('sea');
   if(cv){
     var ctx=cv.getContext('2d'),W,H,t=0;
@@ -761,11 +778,13 @@
       var g=ctx.createLinearGradient(0,0,0,H);
       g.addColorStop(0,'#0a3a44');g.addColorStop(.45,'#0d515a');g.addColorStop(.72,'#12707a');g.addColorStop(1,'#1c8f92');
       ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+      /* sun */
       var sx=W*0.78, sy=H*0.30, r=H*0.14;
       var sg=ctx.createRadialGradient(sx,sy,0,sx,sy,r*2.4);
       sg.addColorStop(0,'rgba(255,236,180,.9)');sg.addColorStop(.4,'rgba(255,205,130,.35)');sg.addColorStop(1,'rgba(255,205,130,0)');
       ctx.fillStyle=sg;ctx.beginPath();ctx.arc(sx,sy,r*2.4,0,7);ctx.fill();
       ctx.fillStyle='rgba(255,240,200,.95)';ctx.beginPath();ctx.arc(sx,sy,r,0,7);ctx.fill();
+      /* shimmer bands */
       for(var i=0;i<7;i++){
         var yy=H*0.5 + i*(H*0.07);
         ctx.beginPath();
