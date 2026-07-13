@@ -1,1114 +1,336 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Blue Water Nine — Caribbean 2027</title></head><body><title>Blue Water Nine — Caribbean 2027</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"></head><body><title>Blue Water Nine — Caribbean 2027 Decision Tool</title>
 <style>
   :root{
-    --paper:#F4F2EB; --ink:#10262B; --ink-2:#3B5257; --line:#DAD6C8;
-    --card:#FBFAF4; --deep:#08313A; --deep-2:#0C4A4E;
-    --teal:#0F8F7C; --teal-ink:#0B6858; --coral:#E4593A; --sand:#CE9A4E;
-    --good:#2E9E6B; --warn:#C77A22; --bad:#C0453A;
-    --shadow:18px 18px 48px rgba(8,49,58,.10);
-    --maxw:1120px;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"URW Palladio L",Georgia,serif;
-    --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
-    --mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
+    --paper:#F4F2EB; --ink:#10262B; --ink-2:#42585D; --line:#DAD6C8;
+    --card:#FBFAF4; --deep:#08313A; --teal:#0F8F7C; --teal-ink:#0B6858;
+    --coral:#E4593A; --sand:#CE9A4E; --good:#2E9E6B; --warn:#C77A22;
+    --shadow:14px 14px 40px rgba(8,49,58,.10); --maxw:1180px;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+    --mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,monospace;
   }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --paper:#071E24; --ink:#E9F1ED; --ink-2:#9DB4B4; --line:#173942;
-      --card:#0C2A31; --deep:#041519; --deep-2:#0A363E;
-      --teal:#2FCBB0; --teal-ink:#38D9BB; --coral:#FF7355; --sand:#E1B75F;
-      --good:#4FC58A; --warn:#E3A84B; --bad:#F0685A;
-      --shadow:18px 18px 48px rgba(0,0,0,.4);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#071E24; --ink:#E9F1ED; --ink-2:#9DB4B4; --line:#173942;
-    --card:#0C2A31; --deep:#041519; --deep-2:#0A363E;
-    --teal:#2FCBB0; --teal-ink:#38D9BB; --coral:#FF7355; --sand:#E1B75F;
-    --good:#4FC58A; --warn:#E3A84B; --bad:#F0685A;
-    --shadow:18px 18px 48px rgba(0,0,0,.4);
-  }
-  :root[data-theme="light"]{
-    --paper:#F4F2EB; --ink:#10262B; --ink-2:#3B5257; --line:#DAD6C8;
-    --card:#FBFAF4; --deep:#08313A; --deep-2:#0C4A4E;
-    --teal:#0F8F7C; --teal-ink:#0B6858; --coral:#E4593A; --sand:#CE9A4E;
-    --good:#2E9E6B; --warn:#C77A22; --bad:#C0453A;
-    --shadow:18px 18px 48px rgba(8,49,58,.10);
-  }
-
+  @media(prefers-color-scheme:dark){:root{--paper:#071E24;--ink:#E9F1ED;--ink-2:#9DB4B4;--line:#173942;--card:#0C2A31;--deep:#041519;--teal:#2FCBB0;--teal-ink:#38D9BB;--coral:#FF7355;--sand:#E1B75F;--good:#4FC58A;--warn:#E3A84B;--shadow:14px 14px 40px rgba(0,0,0,.4)}}
+  :root[data-theme="dark"]{--paper:#071E24;--ink:#E9F1ED;--ink-2:#9DB4B4;--line:#173942;--card:#0C2A31;--deep:#041519;--teal:#2FCBB0;--teal-ink:#38D9BB;--coral:#FF7355;--sand:#E1B75F;--good:#4FC58A;--warn:#E3A84B;--shadow:14px 14px 40px rgba(0,0,0,.4)}
+  :root[data-theme="light"]{--paper:#F4F2EB;--ink:#10262B;--ink-2:#42585D;--line:#DAD6C8;--card:#FBFAF4;--deep:#08313A;--teal:#0F8F7C;--teal-ink:#0B6858;--coral:#E4593A;--sand:#CE9A4E;--good:#2E9E6B;--warn:#C77A22;--shadow:14px 14px 40px rgba(8,49,58,.10)}
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{
-    background:var(--paper);color:var(--ink);font-family:var(--sans);
-    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;text-wrap:balance;letter-spacing:-.01em}
-  a{color:inherit}
-  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
   .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  a{color:var(--teal-ink)}
 
-  /* ---------- NAV ---------- */
-  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;gap:20px;height:60px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;white-space:nowrap}
-  .brand span{color:var(--teal-ink)}
-  .nav-links{display:flex;gap:20px;margin-left:auto;font-size:.82rem}
-  .nav-links a{text-decoration:none;color:var(--ink-2);transition:color .2s}
-  .nav-links a:hover{color:var(--teal-ink)}
-  .toggle{cursor:pointer;background:none;border:1px solid var(--line);color:var(--ink-2);
-    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;transition:.2s}
-  .toggle:hover{border-color:var(--teal);color:var(--teal-ink)}
-  .toggle svg{width:16px;height:16px}
-  @media(max-width:760px){.nav-links{display:none}}
+  /* HERO */
+  header.hero{background:var(--deep);color:#EAF4F1;padding:46px 0 40px}
+  .hero .eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:#7FE4CE}
+  .hero h1{font-size:clamp(2rem,5vw,3.3rem);color:#fff;margin:.3em 0 .3em;max-width:20ch}
+  .hero p{color:#BFE0D8;max-width:60ch;font-size:1.02rem}
+  .hero .steps{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:#8FCFC0}
+  .hero .steps b{color:#fff}
 
-  /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;
-    background:var(--deep);color:#EAF4F1;overflow:hidden}
-  #sea{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 24px 68px;width:100%}
-  .hero .eyebrow{color:#7FE4CE}
-  .hero h1{font-size:clamp(2.8rem,8vw,6rem);color:#fff;margin:.35em 0 .3em;max-width:14ch}
-  .hero p.lede{font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:44ch;color:#CFE7E0;font-family:var(--serif);font-style:italic}
-  .hero-stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:34px}
-  .hero-stats div{display:flex;flex-direction:column}
-  .hero-stats b{font-family:var(--mono);font-size:1.9rem;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
-  .hero-stats small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#8FCFC0;margin-top:6px}
-  .scrollcue{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:3;color:#8FCFC0;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
-  .scrollcue::after{content:"";display:block;width:1px;height:26px;background:linear-gradient(#8FCFC0,transparent);margin:8px auto 0;animation:cue 2s infinite}
-  @keyframes cue{0%{opacity:0;transform:translateY(-6px)}50%{opacity:1}100%{opacity:0;transform:translateY(6px)}}
+  /* CONTROL BAR */
+  .controls{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 0}
+  .controls-in{max-width:var(--maxw);margin:0 auto;padding:0 22px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+  .ctl{display:flex;flex-direction:column;gap:3px}
+  .ctl label{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  select,.chip-btn{font-family:var(--sans);font-size:.86rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:7px 13px;cursor:pointer}
+  select:hover{border-color:var(--teal)}
+  .musthaves{display:flex;gap:6px;flex-wrap:wrap}
+  .chip-btn{font-size:.76rem;transition:.15s;user-select:none}
+  .chip-btn[aria-pressed="true"]{background:var(--teal-ink);color:#fff;border-color:var(--teal-ink)}
+  .ctl-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+  .count{font-family:var(--mono);font-size:.76rem;color:var(--ink-2)}
+  .reset{background:none;border:none;color:var(--teal-ink);font-size:.78rem;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+  .toggle{cursor:pointer;background:none;border:1px solid var(--line);color:var(--ink-2);width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+  .toggle svg{width:15px;height:15px}
 
-  /* ---------- SECTION SHELL ---------- */
-  section{padding:88px 0;position:relative}
-  .sec-head{max-width:60ch;margin-bottom:44px}
-  .sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:.28em 0 .4em}
-  .sec-head p{color:var(--ink-2);font-size:1.06rem}
-  .callout{background:color-mix(in srgb,var(--warn) 13%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 45%,var(--line));border-left:4px solid var(--warn);border-radius:6px;padding:16px 20px;margin-bottom:34px;font-size:.95rem;line-height:1.55;color:var(--ink)}
-  .callout strong{color:var(--ink)}
-  .filterbar{position:sticky;top:59px;z-index:40;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .filterbar-in{max-width:var(--maxw);margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .filterbar label{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
-  .filterbar select{font-family:var(--sans);font-size:.92rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:8px 16px;cursor:pointer}
-  .filterbar select:hover{border-color:var(--teal)}
-  .filterbar .fcount{font-family:var(--mono);font-size:.74rem;color:var(--teal-ink);margin-left:auto}
-  .hide{display:none!important}
-  .chapter-no{font-family:var(--mono);font-size:.78rem;letter-spacing:.2em;color:var(--coral)}
-  .dropcap::first-letter{font-family:var(--serif);float:left;font-size:3.4em;line-height:.72;padding:.06em .12em 0 0;color:var(--teal-ink);font-weight:600}
+  /* DEST LIST */
+  main{padding:26px 0 140px}
+  .dest{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+  .dest-head{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer}
+  .dest-head:hover{background:color-mix(in srgb,var(--teal) 5%,transparent)}
+  .dest-head .name{font-family:var(--serif);font-size:1.35rem}
+  .dest-meta{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.03em;color:var(--ink-2)}
+  .badge{padding:2px 8px;border-radius:100px;border:1px solid var(--line);white-space:nowrap}
+  .badge.good{color:var(--good);border-color:var(--good)}
+  .badge.warn{color:var(--warn);border-color:var(--warn)}
+  .dest-head .range{margin-left:auto;text-align:right;white-space:nowrap}
+  .dest-head .range .r{font-family:var(--mono);font-size:1.05rem;color:var(--teal-ink)}
+  .dest-head .range small{display:block;font-size:.6rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .caret{transition:transform .3s;color:var(--ink-2);flex:0 0 auto}
+  .dest.open .caret{transform:rotate(90deg)}
+  .opts{display:none;padding:0 20px 18px;flex-direction:column;gap:10px}
+  .dest.open .opts{display:flex}
+  .dest-note{font-size:.8rem;color:var(--ink-2);padding:0 20px 14px}
+  .dest.open .dest-note{padding-top:2px}
 
-  /* reveal */
-  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-  .js .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  .opt{display:grid;grid-template-columns:auto 1fr auto;gap:12px 16px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--paper)}
+  .opt .tier{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:100px;font-weight:600;height:fit-content;white-space:nowrap}
+  .t-budget{background:var(--teal);color:#04231d}.t-value{background:var(--coral);color:#fff}.t-premium{background:var(--sand);color:#2a1e06}.t-villa{background:#5b7a86;color:#fff}.t-adults{background:var(--ink);color:var(--paper)}
+  .opt .mid h4{font-size:1.05rem;font-family:var(--serif)}
+  .opt .who{font-size:.83rem;color:var(--ink-2);margin-top:3px}
+  .opt .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+  .tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:100px;background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal-ink)}
+  .tag.adult{background:color-mix(in srgb,var(--ink) 10%,transparent);color:var(--ink)}
+  .opt .right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  .opt .price{font-family:var(--mono);font-size:1.25rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .opt .price small{display:block;font-size:.6rem;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase}
+  .opt .acts{display:flex;gap:6px}
+  .mini{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:6px 10px;border-radius:100px;border:1px solid var(--line);color:var(--ink-2);cursor:pointer;background:none;transition:.15s}
+  .mini:hover{border-color:var(--teal);color:var(--teal-ink)}
+  .mini.pinned{background:var(--teal-ink);color:#fff;border-color:var(--teal-ink)}
+  .mini.link{border-color:var(--teal);color:var(--teal-ink)}
+  @media(max-width:640px){.opt{grid-template-columns:1fr;}.opt .right{align-items:flex-start;text-align:left}.dest-head .range{display:none}}
 
-  /* ---------- VERDICT ---------- */
-  .verdict{background:var(--deep);color:#EAF4F1}
-  .verdict .sec-head p{color:#AFD3CA}
-  .verdict .eyebrow,.verdict .chapter-no{color:#7FE4CE}
-  .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-  .vcard{background:rgba(255,255,255,.04);border:1px solid rgba(127,228,206,.16);border-radius:4px;padding:26px 24px}
-  .vcard .big{font-family:var(--mono);font-size:2.5rem;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
-  .vcard .lbl{font-family:var(--serif);font-size:1.15rem;color:#fff;margin:12px 0 6px}
-  .vcard p{font-size:.92rem;color:#AFD3CA}
-  .vcard .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:#7FE4CE;padding:3px 9px;border-radius:100px;display:inline-block;margin-bottom:14px}
+  .empty{text-align:center;color:var(--ink-2);padding:50px 20px;font-size:1rem}
 
-  /* ---------- COST BARS ---------- */
-  .bars{margin-top:40px;display:flex;flex-direction:column;gap:16px}
-  .bar-row{display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:18px}
-  .bar-row .name{font-size:.9rem}
-  .bar-row .name small{display:block;color:#8FCFC0;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em}
-  .track{height:12px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
-  .fill{height:100%;width:0;border-radius:100px;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
-  .bar-row .amt{font-family:var(--mono);font-variant-numeric:tabular-nums;color:#fff;font-size:.95rem}
-  @media(prefers-reduced-motion:reduce){.fill{transition:none}}
-  @media(max-width:640px){.bar-row{grid-template-columns:1fr;gap:6px}.bar-row .amt{justify-self:start}}
+  /* COMPARE TRAY */
+  .tray{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--deep);color:#EAF4F1;border-top:2px solid var(--teal);transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.7,.2,1);max-height:60vh;overflow:auto}
+  .tray.show{transform:none}
+  @media(prefers-reduced-motion:reduce){.tray{transition:none}}
+  .tray-in{max-width:var(--maxw);margin:0 auto;padding:16px 22px 22px}
+  .tray-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .tray-top h3{color:#fff;font-size:1.1rem}
+  .tray-top .x{margin-left:auto;background:none;border:1px solid rgba(127,228,206,.3);color:#7FE4CE;border-radius:100px;padding:5px 12px;font-family:var(--mono);font-size:.72rem;cursor:pointer}
+  .cmp{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px}
+  .cmp-card{flex:0 0 240px;background:rgba(255,255,255,.05);border:1px solid rgba(127,228,206,.16);border-radius:10px;padding:14px}
+  .cmp-card .cn{font-family:var(--serif);color:#fff;font-size:1.02rem}
+  .cmp-card .cd{font-family:var(--mono);font-size:.64rem;color:#8FCFC0;letter-spacing:.06em;text-transform:uppercase;margin:2px 0 8px}
+  .cmp-card .cp{font-family:var(--mono);font-size:1.3rem;color:#7FE4CE}
+  .cmp-card ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:.78rem;color:#CFE7E0}
+  .cmp-card .rm{margin-top:10px;background:none;border:none;color:#FF9B84;font-family:var(--mono);font-size:.66rem;cursor:pointer;text-decoration:underline}
+  .fab{position:fixed;right:18px;bottom:18px;z-index:45;background:var(--teal-ink);color:#fff;border:none;border-radius:100px;padding:13px 20px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;cursor:pointer;box-shadow:0 12px 30px rgba(11,104,88,.35);display:none}
+  .fab.show{display:block}
 
-  /* ---------- CARD GRID ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;
-    display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  @media(prefers-reduced-motion:reduce){.card:hover{transform:none}}
-  .card-band{height:104px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px}
-  .card-band svg{position:absolute;inset:0;width:100%;height:100%}
-  .card-band .loc{position:relative;z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
-    text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-  .chip{position:absolute;top:12px;right:12px;z-index:2;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
-    text-transform:uppercase;padding:4px 10px;border-radius:100px;font-weight:600}
-  .chip.value{background:var(--coral);color:#fff}
-  .chip.nice{background:rgba(255,255,255,.9);color:var(--deep)}
-  .chip.deluxe{background:var(--sand);color:#2A1E06}
-  .chip.cheap{background:var(--teal);color:#04231d}
-  .card-body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .card-body h3{font-size:1.28rem}
-  .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .price .val{font-family:var(--mono);font-size:2rem;font-variant-numeric:tabular-nums;color:var(--teal-ink);line-height:1}
-  .price .unit{font-size:.78rem;color:var(--ink-2)}
-  .price .conf{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:100px;border:1px solid var(--line);color:var(--ink-2)}
-  .price .conf.live{color:var(--good);border-color:var(--good)}
-  .facts{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:.86rem;color:var(--ink-2)}
-  .facts li{display:flex;gap:8px}
-  .facts li::before{content:"";flex:0 0 6px;height:6px;margin-top:.5em;border-radius:50%;background:var(--teal)}
-  .reviews{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:9px}
-  .rev{font-size:.83rem;line-height:1.45}
-  .rev .lead{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
-  .rev.love .lead{color:var(--good)}
-  .rev.gripe .lead{color:var(--bad)}
-  .rev q{font-style:italic;color:var(--ink)}
-  .rev a{color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
-  .rev a:hover{color:var(--teal-ink)}
-  .card-cta{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;padding-top:4px}
-  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
-    padding:9px 15px;border-radius:100px;transition:.2s;display:inline-flex;align-items:center;gap:7px;cursor:pointer}
-  .btn.primary{background:var(--teal-ink);color:#fff}
-  .btn.primary:hover{background:var(--teal)}
-  .btn.ghost{border:1px solid var(--line);color:var(--ink-2)}
-  .btn.ghost:hover{border-color:var(--teal);color:var(--teal-ink)}
-  .btn svg{width:13px;height:13px}
-
-  /* two-trip math */
-  .math{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:48px}
-  @media(max-width:720px){.math{grid-template-columns:1fr}}
-  .mbox{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px}
-  .mbox.hl{border-color:var(--coral);box-shadow:0 0 0 1px var(--coral)}
-  .mbox h4{font-size:1.15rem;margin-bottom:12px}
-  .mline{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
-  .mline:last-of-type{border-bottom:none}
-  .mline .num{color:var(--ink)}
-  .mtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:14px;border-top:2px solid var(--ink)}
-  .mtot b{font-family:var(--serif);font-size:1.05rem}
-  .mtot .num{font-size:1.7rem;color:var(--teal-ink)}
-  .verdict-line{background:var(--teal-ink);color:#fff;border-radius:6px;padding:22px 26px;font-family:var(--serif);
-    font-size:1.2rem;font-style:italic;line-height:1.4}
-  .verdict-line b{font-style:normal}
-
-  /* deals */
-  .deals{background:var(--deep-2);color:#EAF4F1}
-  .deals .sec-head p,.deals .eyebrow,.deals .chapter-no{color:#9FD8CC}
-  .deals .eyebrow,.deals .chapter-no{color:#7FE4CE}
-  .moves{display:flex;flex-direction:column;gap:2px;margin-bottom:40px;counter-reset:m}
-  .move{background:rgba(255,255,255,.04);border:1px solid rgba(127,228,206,.14);padding:22px 24px;display:grid;
-    grid-template-columns:auto 1fr auto;gap:20px;align-items:start;transition:background .3s}
-  .move:hover{background:rgba(255,255,255,.07)}
-  .move:first-child{border-radius:6px 6px 0 0}.move:last-child{border-radius:0 0 6px 6px}
-  .move .mno{counter-increment:m;font-family:var(--mono);font-size:1.4rem;color:#7FE4CE;font-variant-numeric:tabular-nums}
-  .move .mno::before{content:counter(m,decimal-leading-zero)}
-  .move h4{color:#fff;font-size:1.12rem;margin-bottom:5px}
-  .move p{font-size:.9rem;color:#AFD3CA}
-  .move .impact{font-family:var(--mono);font-size:.74rem;color:#7FE4CE;white-space:nowrap;text-align:right}
-  @media(max-width:640px){.move{grid-template-columns:auto 1fr}.move .impact{grid-column:2;text-align:left}}
-  .desks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-  .desk{background:rgba(255,255,255,.04);border:1px solid rgba(127,228,206,.14);border-radius:5px;padding:16px 18px}
-  .desk .dn{font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:8px}
-  .desk a{display:block;font-family:var(--mono);font-size:.8rem;color:#9FD8CC;text-decoration:none;padding:2px 0}
-  .desk a:hover{color:#fff}
-
-  /* matrix */
-  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
-  table{border-collapse:collapse;width:100%;min-width:620px;font-size:.9rem}
-  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
-  thead th{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);background:color-mix(in srgb,var(--card) 60%,transparent)}
-  tbody tr:hover{background:color-mix(in srgb,var(--teal) 6%,transparent)}
-  td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-  td .pill{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;background:var(--coral);color:#fff}
-
-  /* steps */
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-  .step{border-left:2px solid var(--teal);padding:6px 0 6px 20px}
-  .step .when{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
-  .step h4{font-size:1.1rem;margin:6px 0}
-  .step p{font-size:.9rem;color:var(--ink-2)}
-
-  footer{background:var(--deep);color:#9FD8CC;padding:56px 0 40px;font-size:.84rem}
-  footer .wrap{display:flex;flex-direction:column;gap:14px}
-  footer b{color:#EAF4F1;font-family:var(--serif);font-size:1.1rem;font-weight:600}
-  footer .disc{border:1px solid rgba(127,228,206,.18);border-radius:6px;padding:16px 18px;line-height:1.6}
-  footer a{color:#7FE4CE}
-
-  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+  footer{background:var(--deep);color:#9FD8CC;padding:30px 0;font-size:.8rem}
+  footer .wrap{display:flex;flex-direction:column;gap:8px}
+  footer b{color:#EAF4F1;font-family:var(--serif)}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 </style>
 
-<nav>
-  <div class="nav-in">
-    <div class="brand">Blue Water <span>Nine</span></div>
-    <div class="nav-links">
-      <a href="#start">Choose</a>
-      <a href="#verdict">Costs</a>
-      <a href="#group">Who's Going</a>
-      <a href="#adults">Adults Only</a>
-      <a href="#family">Whole Group</a>
-      <a href="#twotrip">Two Trips</a>
-      <a href="#cruise">Cruise</a>
-      <a href="#clearwater">Clear Water</a>
-      <a href="#deals">Group Deals</a>
-      <a href="#matrix">Compare</a>
-    </div>
-    <button class="toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</nav>
-
 <header class="hero">
-  <canvas id="sea"></canvas>
-  <div class="hero-in reveal">
-    <div class="eyebrow">Caribbean · Spring &amp; Summer 2027 · Departing Tampa</div>
-    <h1>Nine ways to get everyone to the water.</h1>
-    <p class="lede">Five families, twenty-three people, one week — costed four ways across villas, all-inclusives and the open sea.</p>
-    <div class="hero-stats">
-      <div><b class="num">5</b><small>Families</small></div>
-      <div><b class="num">23</b><small>Travelers</small></div>
-      <div><b class="num">4</b><small>Trip formats</small></div>
-      <div><b class="num">7</b><small>Nights</small></div>
-    </div>
+  <div class="wrap">
+    <div class="eyebrow">Caribbean · Spring &amp; Summer 2027 · From Tampa</div>
+    <h1>Five families. One week. Let's find your trip.</h1>
+    <p>Every safe Caribbean destination, each with five real options from budget to blow-out. Narrow it to what fits your group, dig into the depth, pin your finalists, and check your family's number — no wrong answer, just yours.</p>
+    <div class="steps"><b>1</b> Narrow &nbsp;→&nbsp; <b>2</b> Go deep &nbsp;→&nbsp; <b>3</b> Pin &amp; compare &nbsp;→&nbsp; <b>4</b> Your cost</div>
   </div>
-  <div class="scrollcue">Scroll</div>
 </header>
 
-<div class="filterbar">
-  <div class="filterbar-in">
-    <label for="locFilter">Browse by destination</label>
-    <select id="locFilter" aria-label="Filter the page by destination">
-      <option value="all">All destinations</option>
-      <option value="bahamas">Bahamas</option>
-      <option value="puerto rico">Puerto Rico</option>
-      <option value="dominican republic">Dominican Republic</option>
-      <option value="mexico">Mexico</option>
-      <option value="costa rica">Costa Rica</option>
-      <option value="aruba">Aruba</option>
-      <option value="curacao">Curaçao</option>
-      <option value="grand cayman">Grand Cayman</option>
-      <option value="turks">Turks &amp; Caicos</option>
-      <option value="antigua">Antigua</option>
-      <option value="bonaire">Bonaire</option>
-      <option value="el salvador">El Salvador</option>
-      <option value="jamaica">Jamaica</option>
-      <option value="barbados">Barbados</option>
-      <option value="st lucia">St. Lucia</option>
-      <option value="st maarten">St. Maarten</option>
-      <option value="anguilla">Anguilla</option>
-      <option value="st kitts">St. Kitts &amp; Nevis</option>
-      <option value="grenada">Grenada</option>
-      <option value="st vincent">St. Vincent</option>
-      <option value="dominica">Dominica</option>
-      <option value="bvi">British Virgin Islands</option>
-      <option value="martinique">Martinique</option>
-      <option value="guadeloupe">Guadeloupe</option>
-      <option value="tobago">Tobago</option>
-      <option value="cruise">Cruise (from Florida)</option>
-    </select>
-    <label for="famFilter">My family</label>
-    <select id="famFilter" aria-label="Show estimated cost for a specific family">
-      <option value="1">Whole group (fam of 4)</option>
-      <option value="1.33">Bartel — 5 travelers</option>
-      <option value="1.83">Donaldson — 7 travelers</option>
-      <option value="1">Dijoia — 4 travelers</option>
-      <option value="0.67">Bonfanti — 3 travelers</option>
-      <option value="1">Chavis — 4 travelers</option>
-    </select>
-    <span id="famnote" style="font-family:var(--mono);font-size:.72rem;color:var(--teal-ink)"></span>
-    <span class="fcount" id="fcount"></span>
+<div class="controls">
+  <div class="controls-in">
+    <div class="ctl"><label for="fSeason">When</label><select id="fSeason"><option value="spring">Spring break (Mar)</option><option value="summer">Summer (storm-safe only)</option></select></div>
+    <div class="ctl"><label for="fStyle">Style</label><select id="fStyle"><option value="all">Any style</option><option value="resort">Resort / all-inclusive</option><option value="villa">Villa</option><option value="adults">Adults-only</option></select></div>
+    <div class="ctl"><label for="fBudget">Budget / family</label><select id="fBudget"><option value="99999">Any</option><option value="3000">Under $3k</option><option value="5000">Under $5k</option><option value="8000">Under $8k</option><option value="12000">Under $12k</option></select></div>
+    <div class="ctl"><label for="fFamily">My family</label><select id="fFamily"><option value="1">Family of 4</option><option value="1.33">Bartel · 5</option><option value="1.83">Donaldson · 7</option><option value="1">Dijoia · 4</option><option value="0.67">Bonfanti · 3</option><option value="1">Chavis · 4</option></select></div>
+    <div class="ctl"><label>Must-haves</label><div class="musthaves">
+      <button class="chip-btn" data-mh="kids" aria-pressed="false">Kids club</button>
+      <button class="chip-btn" data-mh="teen" aria-pressed="false">Teen club</button>
+      <button class="chip-btn" data-mh="nonstop" aria-pressed="false">Nonstop</button>
+      <button class="chip-btn" data-mh="storm" aria-pressed="false">Storm-safe</button>
+    </div></div>
+    <div class="ctl-right">
+      <span class="count" id="count"></span>
+      <button class="reset" id="reset">Reset</button>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
   </div>
 </div>
 
-<!-- START HERE -->
-<section id="start">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">STEP 1 · CHOOSE YOUR STRATEGY</span>
-      <h2>Four ways to do this. Pick your lane.</h2>
-      <p>Decide the <em>style</em> of trip first — there's no single winner, just the one that fits your group. Tap "Explore" on a card to see its destinations and real options. All figures per family, 7 nights.</p>
-    </div>
-    <div class="vgrid" style="--paper:var(--paper)">
-      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Simplest &amp; cheapest together</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Take a cruise</h4><p style="font-size:.92rem;color:var(--ink-2)">One ship out of Tampa — <strong>no flights</strong>, everyone together, kids' &amp; teen clubs on board. You drive to the port. Short port stops, not deep island time.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">/family &amp; up</span></div><p style="font-size:.82rem;color:var(--ink-2);margin:12px 0 0"><strong style="color:var(--ink)">Best for</strong> all 23 together, cheap, zero planning · <strong style="color:var(--ink)">Catch:</strong> short port stops, not deep island time</p><a class="btn primary" style="margin-top:14px" href="#cruise">Explore cruises →</a></div>
-      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Easiest once you land</div><h4 style="font-size:1.25rem;margin:6px 0 8px">All-inclusive resort</h4><p style="font-size:.92rem;color:var(--ink-2)">One hotel; food, drinks, and kids' clubs included. You fly there. Zero planning on-site — just show up. Mid-price, and a few budget islands run cheaper.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="4000" data-prefix="$">$0</span><span class="unit">/family (to ~$11k)</span></div><p style="font-size:.82rem;color:var(--ink-2);margin:12px 0 0"><strong style="color:var(--ink)">Best for</strong> hands-off ease + kids/teen clubs · <strong style="color:var(--ink)">Catch:</strong> one property; "kids free" usually blacked out at spring break</p><a class="btn primary" style="margin-top:14px" href="#family">Explore resorts →</a></div>
-      <div class="mbox reveal"><div class="eyebrow" style="color:var(--coral)">Best value if you'll DIY</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Split a villa</h4><p style="font-size:.92rem;color:var(--ink-2)">Rent big houses together and split the cost — nicest place per dollar. But you handle groceries/a chef and rental cars, and you add flights on top.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="1700" data-prefix="$">$0</span><span class="unit">/family lodging + flights</span></div><p style="font-size:.82rem;color:var(--ink-2);margin:12px 0 0"><strong style="color:var(--ink)">Best for</strong> nicest place per dollar + adults-only luxury · <strong style="color:var(--ink)">Catch:</strong> DIY — chef/groceries, cars, flights on top</p><a class="btn primary" style="margin-top:14px" href="#adults">Explore villas →</a></div>
-      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Best of both</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Do two trips</h4><p style="font-size:.92rem;color:var(--ink-2)">Parents take a spring getaway; everyone does a summer villa week. Two vacations for about the price of one big group trip.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="5900" data-prefix="$">$0</span><span class="unit">/family · both trips</span></div><p style="font-size:.82rem;color:var(--ink-2);margin:12px 0 0"><strong style="color:var(--ink)">Best for</strong> adults <em>and</em> kids each getting their trip · <strong style="color:var(--ink)">Catch:</strong> two sets of flights &amp; planning</p><a class="btn primary" style="margin-top:14px" href="#twotrip">See the plan →</a></div>
-    </div>
-    <div class="callout reveal" style="margin-top:34px;margin-bottom:0"><strong>What moves the price, in three lines:</strong> (1) <strong>Airfare is per person</strong> — so bigger families pay more (use the "My family" pull-down above to see your number). (2) <strong>How fancy the lodging is</strong> — value AI vs. luxury villa can be 3× apart. (3) <strong>Kids-free deals</strong> — only some resorts, usually under age 12–17, and usually <em>not</em> over spring break. · <strong>Closer &amp; cheaper to reach:</strong> Bahamas, Puerto Rico, Cancún, Jamaica. <strong>Farther &amp; pricier:</strong> Turks, Anguilla, Cayman, the French islands.</div>
-  </div>
-</section>
+<main><div class="wrap"><div id="list"></div><div class="empty" id="empty" style="display:none">No options match those filters. Loosen a must-have or raise the budget.</div></div></main>
 
-<!-- VERDICT -->
-<section class="verdict" id="verdict">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">AT A GLANCE</span>
-      <h2>One number for each approach.</h2>
-      <p>A neutral snapshot — a representative price per strategy, then the full spread below. All planning estimates; 2027 isn't bookable yet.</p>
-    </div>
-    <div class="vgrid">
-      <div class="vcard reveal"><span class="tag">Cruise example</span><div class="big num" data-count="3700" data-prefix="$">$0</div><div class="lbl">A cruise, from Tampa</div><p>Royal Caribbean's 7-night Grandeur sails from your home port — no flights — for about this per family. Nothing else keeps all 23 together for less.</p></div>
-      <div class="vcard reveal"><span class="tag">Resort example</span><div class="big num" data-count="6050" data-prefix="$">$0</div><div class="lbl">Moon Palace Cancún</div><p>The only family all-inclusive with a confirmed March-2027 quote and both a kids &amp; teen club — kids and teens stay free to 17.</p></div>
-      <div class="vcard reveal"><span class="tag">Two-trip example</span><div class="big num" data-count="5900" data-prefix="$">$0</div><div class="lbl">Two trips ≈ one</div><p>Adults get a Costa Rica luxury villa <em>and</em> the families get a summer villa — two full trips, flights included — for about the cost of one group all-inclusive.</p></div>
-      <div class="vcard reveal"><span class="tag">Villa example</span><div class="big num" data-count="1150" data-prefix="$">$0</div><div class="lbl">Per adult, all-in</div><p>A staffed 6-bedroom Costa Rica villa splits to the best luxury-per-dollar of anything we found — flights and shared cars included.</p></div>
-    </div>
+<button class="fab" id="fab"></button>
+<div class="tray" id="tray"><div class="tray-in"><div class="tray-top"><h3>Your shortlist</h3><button class="x" id="clearPins">Clear all</button><button class="x" id="closeTray">Close</button></div><div class="cmp" id="cmp"></div><p style="color:#8FCFC0;font-size:.72rem;margin-top:10px;font-family:var(--mono)">Screenshot this and text it to the group. Prices reflect the selected family; adults-only shown per couple.</p></div></div>
 
-    <div class="bars">
-      <div class="bar-row reveal"><div class="name">Cruise — RCL Grandeur<small>7 nt · interior · from Tampa</small></div><div class="track"><div class="fill" data-pct="30" style="background:#7FE4CE"></div></div><div class="amt num">$3,700<span style="color:#8FCFC0">/fam</span></div></div>
-      <div class="bar-row reveal"><div class="name">Two-trip value combo<small>adults CR villa + summer family villa</small></div><div class="track"><div class="fill" data-pct="49" style="background:#7FE4CE"></div></div><div class="amt num">$5,900<span style="color:#8FCFC0">/fam · 2 trips</span></div></div>
-      <div class="bar-row reveal"><div class="name">Family AI — Barceló Maya<small>value · Riviera Maya</small></div><div class="track"><div class="fill" data-pct="36" style="background:var(--sand)"></div></div><div class="amt num">$4,300<span style="color:#8FCFC0">/fam</span></div></div>
-      <div class="bar-row reveal"><div class="name">Family AI — Moon Palace<small>best value · confirmed</small></div><div class="track"><div class="fill" data-pct="50" style="background:var(--sand)"></div></div><div class="amt num">$6,050<span style="color:#8FCFC0">/fam</span></div></div>
-      <div class="bar-row reveal"><div class="name">Family AI — Hotel Xcaret<small>deluxe · parks included</small></div><div class="track"><div class="fill" data-pct="93" style="background:var(--coral)"></div></div><div class="amt num">$11,200<span style="color:#8FCFC0">/fam</span></div></div>
-    </div>
-    <p style="margin-top:18px;font-size:.8rem;color:#7FA79D;font-family:var(--mono)">Bars scaled per family, 7 nights. Two-trip bar is two vacations, not one.</p>
-  </div>
-</section>
-
-<!-- WHO'S GOING -->
-<section id="group">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">WHO'S GOING</span>
-      <h2>Five families, twenty-three people.</h2>
-      <p>Rough all-in per family for the cheapest way to keep everyone together — the 7-night cruise from Tampa. The other formats run higher; each scenario below breaks the numbers down.</p>
-    </div>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
-      <div class="mbox reveal"><div class="eyebrow">2 parents + 3</div><h4 style="font-size:1.35rem;margin:8px 0 12px">Bartel</h4><div class="price"><span class="val num" data-count="5000" data-prefix="$">$0</span><span class="unit">≈ cruise, all-in</span></div></div>
-      <div class="mbox reveal"><div class="eyebrow">2 parents + 5 · incl. a couple</div><h4 style="font-size:1.35rem;margin:8px 0 12px">Donaldson</h4><div class="price"><span class="val num" data-count="6800" data-prefix="$">$0</span><span class="unit">≈ cruise, all-in</span></div></div>
-      <div class="mbox reveal"><div class="eyebrow">2 parents + 2</div><h4 style="font-size:1.35rem;margin:8px 0 12px">Dijoia</h4><div class="price"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">≈ cruise, all-in</span></div></div>
-      <div class="mbox reveal"><div class="eyebrow">1 parent + 2</div><h4 style="font-size:1.35rem;margin:8px 0 12px">Bonfanti</h4><div class="price"><span class="val num" data-count="2400" data-prefix="$">$0</span><span class="unit">≈ cruise, all-in</span></div></div>
-      <div class="mbox reveal"><div class="eyebrow">2 parents + 2</div><h4 style="font-size:1.35rem;margin:8px 0 12px">Chavis</h4><div class="price"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">≈ cruise, all-in</span></div></div>
-    </div>
-    <p style="margin-top:22px;font-size:.86rem;color:var(--ink-2)">All twenty-three ≈ <strong class="num">$21,600</strong> for the cruise (~7 cabins). <em>Approximate — interior cabins, taxes &amp; gratuities included.</em> Costs scale with family size: the three 19-year-olds price as adults, while kids sailing as the 3rd/4th person in a cabin are much cheaper. Family all-inclusives run roughly 15–60% higher; villa trips depend on how the group splits.</p>
-  </div>
-</section>
-
-<!-- SCENARIO 1 : ADULTS ONLY -->
-<section id="adults">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">SCENARIO ONE</span>
-      <h2>Adults only, spring break.</h2>
-      <p class="dropcap">Ten to twelve adults, the week of March 12. Two roads: split a staffed luxury villa (the cheaper <em>and</em> plusher option for a group this size), or go turnkey at an adults-only all-inclusive. Prices are all-in per adult for 7 nights — lodging, flights from Tampa, shared cars where needed.</p>
-    </div>
-
-    <h3 style="margin-bottom:22px;font-size:1.4rem">The villa route <span style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2)">— split one estate, or two next door</span></h3>
-    <div class="grid">
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 70 200 88 T400 82 V120 H0Z" fill="rgba(255,255,255,.12)"/><circle cx="330" cy="38" r="20" fill="rgba(255,232,150,.5)"/><path d="M60 95 q6-34 2-52 q14 12 20 6 q-10 8-14 0 q10 10 22 2 q-14 14-30 44Z" fill="rgba(255,255,255,.22)"/></svg><span class="chip value">Best value luxury</span><span class="loc">Guanacaste · Costa Rica</span></div>
-        <div class="card-body">
-          <h3>Casa Cox / Deluxe Papagayo</h3>
-          <div class="price"><span class="val num" data-count="1150" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>6 BR · sleeps 12 · two infinity pools</li><li>Gated, 24-hr security · 25 min from Liberia (LIR)</li><li>~$5,933/week villa = just $515/adult in lodging</li><li>Fly TPA→LIR nonstop; 2 SUVs split among the group</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>Concierge pre-stocked the kitchen and met us on arrival; Pacific views over the pool.</q></div><div class="rev gripe"><span class="lead">Note</span> No verified guest reviews for this exact villa — feedback is Papagayo-community level. <a href="https://www.villascostarica.com/vacation-rentals/papagayo/gp-20/" target="_blank" rel="noopener">Worth a manual check</a>.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.villascostarica.com/vacation-rentals/papagayo/gp-20/" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 74 200 90 T400 86 V120 H0Z" fill="rgba(255,255,255,.12)"/><circle cx="60" cy="34" r="18" fill="rgba(255,232,150,.45)"/></svg><span class="chip cheap">Cheapest</span><span class="loc">El Zonte · El Salvador</span></div>
-        <div class="card-body">
-          <h3>El Zonte staffed villa</h3>
-          <div class="price"><span class="val num" data-count="1000" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>Clifftop cove villa, live-in cook &amp; caretaker</li><li>Now US Travel Advisory <strong>Level 1</strong> — airport→beach corridor exempt from night-driving caution</li><li>MCO→SAL nonstop ~$375–500; private van transfer</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>Ocean + freshwater pools, private beach, staff included</q> — surf-town setting.</div><div class="rev gripe"><span class="lead">Watch</span> Strong rip currents; less-established destination; villa rate is an estimate.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.airbnb.com/rooms/1060945517111789538" target="_blank" rel="noopener">View listing<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/el-salvador-travel-advisory.html" target="_blank" rel="noopener">Safety advisory</a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#12776A,#0B5057)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.12)"/><path d="M70 96 q4-30 0-48 q16 14 24 6 q-12 8-18 0 q12 12 26 4 q-18 16-32 38Z" fill="rgba(255,255,255,.2)"/></svg><span class="chip nice">Chef included</span><span class="loc">Soliman Bay · Riviera Maya</span></div>
-        <div class="card-body">
-          <h3>Casa Kevali</h3>
-          <div class="price"><span class="val num" data-count="1805" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>6 BR · sleeps 12 · beachfront pool</li><li>Private chef Mon–Sat, live-in staff</li><li>75–90 min from Cancún; TPA→CUN cheapest air of the set</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">4.5★</span><q>The cook made Yucatecan dishes all week — the relleno negro was extraordinary.</q> <a href="https://villaexperience.com/properties/casa-kevali/" target="_blank" rel="noopener">Villa Experience</a></div><div class="rev gripe"><span class="lead">Gripe</span><q>Smaller than the price point suggests — a 3-star property at a 5-star rate.</q></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://villaexperience.com/properties/casa-kevali/" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0D6E6B,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 78 200 92 T400 84 V120 H0Z" fill="rgba(255,255,255,.12)"/><circle cx="320" cy="40" r="16" fill="rgba(255,232,150,.4)"/></svg><span class="chip nice">Views</span><span class="loc">Galley Bay Heights · Antigua</span></div>
-        <div class="card-body">
-          <h3>Villa Sugar Mill</h3>
-          <div class="price"><span class="val num" data-count="1985" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>6 en-suite BR · sleeps 12 · oceanfront infinity pool</li><li>Daily staff · 15–20 min from airport</li><li>No nonstop from Florida — 1 stop via Miami</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Exceeded our expectations — photos don't usually match, this time they did.</q> <a href="https://www.exceptionalvillas.com/sugar-mill/l50097" target="_blank" rel="noopener">Exceptional Villas</a></div><div class="rev gripe"><span class="lead">Note</span> Only ~13 public reviews — thin but real; one lukewarm 3★.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.exceptionalvillas.com/sugar-mill/l50097" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0F7E6D,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.12)"/></svg><span class="chip nice">Staff + transfers</span><span class="loc">Puntacana Resort &amp; Club · DR</span></div>
-        <div class="card-body">
-          <h3>PC Resort &amp; Club 80</h3>
-          <div class="price"><span class="val num" data-count="1138" data-prefix="$">$0</span><span class="unit">/adult lodging</span></div>
-          <ul class="facts"><li>5 BR · sleeps 12 · saltwater infinity pool</li><li>Private chef, butler, maid &amp; airport transfers included</li><li>10–15 min from Punta Cana (PUJ); gated, very safe</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span> Gated grounds, beach club, staff who go above and beyond.</div><div class="rev gripe"><span class="lead">Gripe</span><q>Billing at the beach club — overcharges &amp; undisclosed taxes.</q> <a href="https://wanderlog.com/place/details/447439/puntacana-resort" target="_blank" rel="noopener">Google reviews</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.thetopvillas.com/en_us/destinations/dominican-republic/punta-cana/punta-cana-resort-club/punta-cana-resort-club-80" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0A5F6B,#08414F)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 72 200 90 T400 80 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="60" cy="36" r="17" fill="rgba(255,232,150,.4)"/></svg><span class="chip deluxe">Splash</span><span class="loc">Cap Cana · Dominican Republic</span></div>
-        <div class="card-body">
-          <h3>Cap Cana 13 — beachfront</h3>
-          <div class="price"><span class="val num" data-count="3424" data-prefix="$">$0</span><span class="unit">/adult · 7 nt lodging</span></div>
-          <ul class="facts"><li>6 BR · sleeps 12 · sand out the door</li><li>Infinity pool, full staff, transfers included</li><li>The "money's-no-object" pick — ~3× the value option</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Rare direct-beachfront in gated Cap Cana with full service.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.thetopvillas.com/en_us/destinations/dominican-republic/punta-cana/cap-cana/cap-cana-13" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-
-    <h3 style="margin:52px 0 22px;font-size:1.4rem">The all-inclusive route <span style="font-family:var(--mono);font-size:.8rem;color:var(--ink-2)">— nothing to organize</span></h3>
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#B8492E,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip value">Value / party</span><span class="loc">Punta Cana · DR</span></div>
-        <div class="card-body">
-          <h3>Hotel Riu Republica</h3>
-          <div class="price"><span class="val num" data-count="1340" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>18+ · on-site Pacha club, water park, swim-up bars</li><li>The lively, budget-first base</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">8/10</span><q>Onelio knew our order by the pool and kept them coming.</q></div><div class="rev gripe"><span class="lead">7/10</span><q>Mould in the fridge, the toilet didn't flush.</q> <a href="https://www.booking.com/reviews/do/hotel/riu-republica-adults-only-all-inclusive.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.riu.com/en/hotel/dominican-republic/punta-cana/hotel-riu-republica" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="330" cy="38" r="18" fill="rgba(255,232,150,.4)"/></svg><span class="chip value">Best value-upscale</span><span class="loc">Riviera Maya · Mexico</span></div>
-        <div class="card-body">
-          <h3>Excellence Riviera Cancun</h3>
-          <div class="price"><span class="val num" data-count="1925" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>All-suite, 6 pools, ~10 restaurants no-reservation</li><li>Cheaper flights + short transfer vs Punta Cana</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Beautiful facilities and extremely attentive staff — a five-star experience.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Value has decreased substantially while prices keep going up.</q> <a href="https://www.tripadvisor.com/ShowUserReviews-g240327-d499896-r1043981156-Excellence_Riviera_Cancun-Puerto_Morelos_Yucatan_Peninsula.html" target="_blank" rel="noopener">TripAdvisor</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.excellenceresorts.com/riviera-maya-cancun/excellence-riviera-cancun/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0D6E6B,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 78 200 92 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Relaxed-upscale</span><span class="loc">Cap Cana · DR</span></div>
-        <div class="card-body">
-          <h3>Secrets Cap Cana</h3>
-          <div class="price"><span class="val num" data-count="2150" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>All-suite, gated Cap Cana, quiet &amp; calm</li><li>Unlimited-Luxury, sister-resort privileges</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">10/10</span><q>Much quieter than other all-inclusives; staff exceptional, grounds beautiful.</q></div><div class="rev gripe"><span class="lead">8/10</span><q>The beach was a mess and billing didn't match the quote.</q> <a href="https://www.booking.com/reviews/do/hotel/secrets-cap-cana-resort-amp-spa.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.hyattinclusivecollection.com/en/resorts-hotels/secrets/dominican-republic/cap-cana-resort-spa/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#C99A44,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="60" cy="34" r="16" fill="rgba(255,244,200,.5)"/></svg><span class="chip deluxe">Deluxe ceiling</span><span class="loc">Riviera Maya · Mexico</span></div>
-        <div class="card-body">
-          <h3>UNICO 20°87°</h3>
-          <div class="price"><span class="val num" data-count="2675" data-prefix="$">$0</span><span class="unit">/adult all-in</span></div>
-          <ul class="facts"><li>Design-forward all-suite; local excursions &amp; spa credit bundled</li><li>Sets the premium ceiling for the adults-only route</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Obsessed is an understatement — the food and restaurant options were amazing.</q></div><div class="rev gripe"><span class="lead">7/10</span><q>Very nice but not 5-star quality; service inconsistent, food uneven.</q> <a href="https://www.booking.com/reviews/mx/hotel/unico-20n-87w-riviera-maya.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.unicohotelcollection.com/riviera-maya/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SCENARIO 2 : WHOLE GROUP -->
-<section id="family" style="background:color-mix(in srgb,var(--teal) 5%,var(--paper))">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">SCENARIO TWO</span>
-      <h2>Everyone together, spring break.</h2>
-      <p class="dropcap">Twelve adults, twelve kids from 7 to 15. The non-negotiables are a real kids club <em>and</em> a teen club — so the 15-year-olds have somewhere to be that isn't the buffet. Prices are all-in per family of four (two adults, two kids) for 7 nights, flights included.</p>
-    </div>
-    <div class="callout reveal"><strong>Read the "kids stay free" fine print.</strong> The best deals — Moon Palace &amp; Hotel Xcaret (free to 17) — almost always <strong>black out spring break</strong> (Easter 2027 = March 28). Barceló, Dreams &amp; Hard Rock cut kids off at 12–13, so your 13–15-year-olds price as adults there anyway. The free-kids advantage mostly lands on the <em>summer</em> trip, not March — confirm the exact 2027 blackout dates before you bank on it.</div>
-    <div class="grid">
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="330" cy="38" r="18" fill="rgba(255,232,150,.4)"/></svg><span class="chip value">Cheapest</span><span class="loc">Riviera Maya · Mexico</span></div>
-        <div class="card-body">
-          <h3>Barceló Maya Palace</h3>
-          <div class="price"><span class="val num" data-count="4300" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Kids club 4–12 + "One Disco" teen club 13–17</li><li>Free kids water park; Junior Suites sleep 5</li><li><strong>Kids:</strong> shallow discount to ~11; 12–13+ pay the adult rate</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>The Barcy Club instructors are engaged — Samantha especially is energetic and fun.</q></div><div class="rev gripe"><span class="lead">1/10</span><q>Aggressive timeshare pressure — wouldn't let us leave without resigning.</q> <a href="https://www.booking.com/reviews/mx/hotel/barcelo-maya-palace.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.barcelo.com/en-us/barcelo-maya-palace/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="64" cy="36" r="17" fill="rgba(255,232,150,.45)"/></svg><span class="chip value">Best value · confirmed</span><span class="loc">Cancún · Mexico</span></div>
-        <div class="card-body">
-          <h3>Moon Palace Cancún</h3>
-          <div class="price"><span class="val num" data-count="6050" data-prefix="$">$0</span><span class="unit">/family all-in</span><span class="conf live">Live quote</span></div>
-          <ul class="facts"><li>Kids club 4–12 + "Wired" teen club 13–17</li><li><strong>Kids &amp; teens ≤17 stay, play &amp; eat free</strong> — but spring break is likely blacked out; confirm dates</li><li>Guaranteed connecting rooms · FlowRider &amp; wave pool</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>I've been to 28 countries and never enjoyed a trip with my kids as much.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Had to endure 24+ hours without A/C.</q> <a href="https://www.tripadvisor.com/ShowUserReviews-g150807-d219163-r796511471-Moon_Palace_Cancun-Cancun_Yucatan_Peninsula.html" target="_blank" rel="noopener">TripAdvisor</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.moonpalacecancun.com/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="tel:+18887317625">Group desk</a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0F7E6D,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 78 200 92 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">2-bedroom suites</span><span class="loc">Punta Cana · DR</span></div>
-        <div class="card-body">
-          <h3>Barceló Bávaro Palace</h3>
-          <div class="price"><span class="val num" data-count="6800" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Every family gets a true <strong>2-bedroom</strong> family suite (657 ft²)</li><li>Barcy kids club + "The Xone" teen nightclub · kids water park</li><li><strong>Kids:</strong> under-2 free, ages 2–11 ~half price; 12+ pays adult</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>The kids Barcy pool and club is excellent; our teen sons had a great time at Xone.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Room was full of insects; the WiFi sucked.</q> <a href="https://www.booking.com/reviews/do/hotel/barcelo-bavaro-palace-deluxe.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.barcelo.com/en-us/barcelo-bavaro-palace/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0D6E6B,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="326" cy="38" r="16" fill="rgba(255,232,150,.4)"/></svg><span class="chip nice">Teen club to midnight</span><span class="loc">Punta Cana · DR</span></div>
-        <div class="card-body">
-          <h3>Dreams Macao Beach</h3>
-          <div class="price"><span class="val num" data-count="7500" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Explorer's Club 3–12 + Core Zone teen club open to <strong>midnight</strong></li><li>Water park + lazy river · swim-up family rooms</li><li><strong>Kids:</strong> ≤12 may stay free (confirm Macao is eligible); 13+ pays adult</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">10/10</span><q>Swim-up room, pools, waterslides, lazy river — suited our family perfectly.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>The food was a huge disappointment — we survived on fries and white rice.</q> <a href="https://www.busybeingshasha.com/blog/dreamsmacaobeachresort" target="_blank" rel="noopener">Family blog</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.hyattinclusivecollection.com/en/resorts-hotels/dreams/dominican-republic/macao-beach-punta-cana/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#B8492E,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 72 200 90 T400 80 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Kids stay free</span><span class="loc">Punta Cana · DR</span></div>
-        <div class="card-body">
-          <h3>Hard Rock Punta Cana</h3>
-          <div class="price"><span class="val num" data-count="8200" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Roxity Kids Club 4–12 + teen Gaming Room 13–17</li><li><strong>Kids 4–12 stay free</strong>; teens 13+ price as adults · $200 credit · spring break historically blacked out</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">9/10</span><q>The kids club was excellent — very safe, fun, and well organized.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Staying 7 nights was long when 50% of the water park wasn't operational.</q> <a href="https://www.booking.com/reviews/do/hotel/hard-rock-hotel-and-casino-punta-cana-all-inclusive.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://hotel.hardrock.com/punta-cana/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#C99A44,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="64" cy="34" r="16" fill="rgba(255,244,200,.5)"/></svg><span class="chip deluxe">Deluxe · parks included</span><span class="loc">Playa del Carmen · Mexico</span></div>
-        <div class="card-body">
-          <h3>Hotel Xcaret México</h3>
-          <div class="price"><span class="val num" data-count="11200" data-prefix="$">$0</span><span class="unit">/family all-in</span></div>
-          <ul class="facts"><li>Tiered clubs: toddler → teens 13–17 · teen rooftop pool</li><li><strong>Unlimited access to 10+ Xcaret eco-parks</strong> bundled in</li><li><strong>Kids:</strong> likely free to 17 with 2 adults — confirm spring-break coverage</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">10/10</span><q>Travelled with 2 kids (8 &amp; 12) and it was amazing — service, food, drinks incredible.</q></div><div class="rev gripe"><span class="lead">8/10</span><q>Couldn't secure restaurant reservations despite booking 30 days ahead; too much upsell.</q> <a href="https://www.booking.com/reviews/mx/hotel/xcaret-all-tours-amp-parks-included.html" target="_blank" rel="noopener">Booking.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.hotelxcaret.com/en/hotel-xcaret-mexico/" target="_blank" rel="noopener">Resort site<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SCENARIO 3 : TWO TRIPS -->
-<section id="twotrip" class="verdict">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">SCENARIO THREE</span>
-      <h2>Two trips for the price of one.</h2>
-      <p style="color:#AFD3CA">The most interesting math we found. Parents take their own luxury week in spring; the whole family does a relaxed villa week in summer. Do both — flights and all — for about what a single group all-inclusive costs.</p>
-    </div>
-
-    <div class="math">
-      <div class="mbox hl reveal" style="background:rgba(255,255,255,.04);border-color:var(--coral)">
-        <h4 style="color:#fff">Value combo — both trips</h4>
-        <div class="mline"><span style="color:#CFE7E0">Spring · 2 adults, Costa Rica villa (all-in)</span><span class="num" style="color:#fff">$2,300</span></div>
-        <div class="mline"><span style="color:#CFE7E0">Summer · family villa + round-trip airfare</span><span class="num" style="color:#fff">$3,600</span></div>
-        <div class="mtot"><b style="color:#fff">Per family · 2 vacations</b><span class="num" style="color:#7FE4CE">$5,900</span></div>
-      </div>
-      <div class="mbox reveal" style="background:rgba(255,255,255,.04);border-color:rgba(127,228,206,.16)">
-        <h4 style="color:#fff">One group all-inclusive</h4>
-        <div class="mline"><span style="color:#CFE7E0">Spring · Moon Palace, family of 4</span><span class="num" style="color:#fff">$6,050</span></div>
-        <div class="mline"><span style="color:#CFE7E0">Summer</span><span class="num" style="color:#8FCFC0">—</span></div>
-        <div class="mtot"><b style="color:#fff">Per family · 1 vacation</b><span class="num" style="color:#fff">$6,050</span></div>
-      </div>
-    </div>
-    <div class="verdict-line reveal" style="margin-bottom:52px"><b>The takeaway:</b> the value two-trip plan gives the adults a Costa Rica villa <em>and</em> the families a summer villa week — two full vacations, airfare included — for about the same ~$6,000 as a single group all-inclusive. One trip's money, two trips' memories.</div>
-
-    <h3 style="color:#fff;margin-bottom:8px;font-size:1.4rem">The summer family villas <span style="font-family:var(--mono);font-size:.8rem;color:#8FCFC0">— per family, lodging only</span></h3>
-    <p style="color:#8FCFC0;font-size:.86rem;margin-bottom:22px">Prices below are the villa split across five families. Round-trip Tampa airfare adds ~$450–650/person on top — least for the two nonstop options (Mexico &amp; Costa Rica).</p>
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="330" cy="38" r="18" fill="rgba(255,232,150,.45)"/></svg><span class="chip value">Best value</span><span class="loc">Palm Beach · Aruba</span></div>
-        <div class="card-body">
-          <h3>Merlot Villas / Koyari</h3>
-          <div class="price"><span class="val num" data-count="1679" data-prefix="$">$0</span><span class="unit">/family · 7 nt</span></div>
-          <ul class="facts"><li>All 23 under one roof, or a villa per family</li><li>Level-1 safe · below the hurricane belt in summer · walk to Palm Beach</li><li>MCO→Aruba nonstop on Southwest</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Frank was an amazing host — communication A1 from the moment I booked.</q> <a href="https://wanderlog.com/place/details/3898905/merlot-villas-aruba" target="_blank" rel="noopener">Reviews</a></div><div class="rev gripe"><span class="lead">Note</span> Every retrievable Merlot review was 5★ — only quirk is a clicker-operated gate.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.merlotvillasaruba.com/groups" target="_blank" rel="noopener">View villas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Cheapest flights</span><span class="loc">Puerto Aventuras · Mexico</span></div>
-        <div class="card-body">
-          <h3>2× Puerto Aventuras villas</h3>
-          <div class="price"><span class="val num" data-count="2065" data-prefix="$">$0</span><span class="unit">/family · 7 nt</span></div>
-          <ul class="facts"><li>Gated, walkable marina town · calm kid-safe bay</li><li>TPA→CUN nonstop ~$300 rt — the cheapest, shortest air of the set</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Gated + walkable + turnkey, and the easiest flight day for 12 kids.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.vrbo.com/vacation-rentals/villas/mexico/qr/puerto-aventuras" target="_blank" rel="noopener">Browse villas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0F7E6D,#0C4E5E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 78 200 92 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="326" cy="40" r="16" fill="rgba(255,232,150,.4)"/></svg><span class="chip nice">Big-group flawless</span><span class="loc">Riviera Maya · Mexico</span></div>
-        <div class="card-body">
-          <h3>Hacienda Jaguar</h3>
-          <div class="price"><span class="val num" data-count="4004" data-prefix="$">$0</span><span class="unit">/family · 7 nt</span></div>
-          <ul class="facts"><li>12 BR · sleeps 24 · full chef/butler/concierge staff</li><li>Beachfront on calm Fatima Bay · on-site cenote</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>We spent a week with 26 people and it was flawless. The staff is what makes it a gem.</q> <a href="https://rivieramayahaciendas.com/listing/hacienda-jaguar/" target="_blank" rel="noopener">Reviews</a></div><div class="rev gripe"><span class="lead">Gripe</span><q>The access road is rough — worth it.</q></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://villaexperience.com/properties/hacienda-jaguar/" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#B8492E,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Read reviews first</span><span class="loc">Tamarindo · Costa Rica</span></div>
-        <div class="card-body">
-          <h3>Cocoon Tamarindo</h3>
-          <div class="price"><span class="val num" data-count="3528" data-prefix="$">$0</span><span class="unit">/family · 7 nt</span></div>
-          <ul class="facts"><li>10 BR estate (4–5 houses) · 2 pools · gated</li><li>4.6★ overall — but genuine 1★ warnings worth reading</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Fabulous compound for large groups — we were 14 for our mother's 80th.</q></div><div class="rev gripe"><span class="lead">1★</span><q>You're watched 24/7 by the owners next door — like vacationing in a beautiful prison.</q> <a href="https://www.google.com/maps/place/Cocoon+Tamarindo+-+Gated+Community/@10.3040521,-85.826174,17z" target="_blank" rel="noopener">Google reviews</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.exceptionalvillas.com/cocoon-tamarindo/l99859" target="_blank" rel="noopener">View estate<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0D6E6B,#0A4A5B)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 72 200 90 T400 80 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="60" cy="36" r="17" fill="rgba(255,232,150,.4)"/></svg><span class="chip nice">Calm bay for young kids</span><span class="loc">Freetown · Antigua</span></div>
-        <div class="card-body">
-          <h3>Nonsuch Bay Residences</h3>
-          <div class="price"><span class="val num" data-count="2240" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
-          <ul class="facts"><li>Four 3-BR units · 3 pools · reef-protected calm bay</li><li>Watersports school on-site · great for the 7-year-olds</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Gated community — families take separate units yet gather easily.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.tripadvisor.com/Hotel_Review-g2067331-d1980445-Reviews-Residences_At_Nonsuch_Bay_Antigua-Freetown_Saint_Philip_Parish_Antigua_Antigua_and_Ba.html" target="_blank" rel="noopener">View residences<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0A5F6B,#08414F)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 78 200 92 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/><circle cx="326" cy="38" r="16" fill="rgba(255,232,150,.4)"/></svg><span class="chip nice">Wedding-party favorite</span><span class="loc">English Harbour · Antigua</span></div>
-        <div class="card-body">
-          <h3>Bluff House</h3>
-          <div class="price"><span class="val num" data-count="5290" data-prefix="$">$0</span><span class="unit">/family · 7 nt</span></div>
-          <ul class="facts"><li>Multi-house layout (Bluff + Garden + Pink) sleeps ~24</li><li>270° harbour views · walk to Pigeon Beach</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">5★</span><q>Surpasses other Antigua villas in every respect — perfect for our wedding party.</q> <a href="https://bluffhouseantigua.com/guestbook/" target="_blank" rel="noopener">Guestbook</a></div><div class="rev gripe"><span class="lead">Watch</span> Unfenced pool &amp; low terrace walls — a caution for very young kids.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.vacationcottage.com/property/bluff-house-english-harbour-villa-with-pool-and-exceptional-views-sleeps-12/HA-61111002860" target="_blank" rel="noopener">View villa<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SCENARIO 4 : CRUISE -->
-<section id="cruise">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">SCENARIO FOUR</span>
-      <h2>Everyone aboard.</h2>
-      <p class="dropcap">No flights, no airport with 12 kids — you drive to the pier. Both ships have real kids <em>and</em> teen programs (stronger, honestly, than the line we took off the list). Prices are all-in per family cabin (2 adults, 2 kids) for 7 nights, including taxes and gratuities.</p>
-    </div>
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E5E7A,#0A3A50)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 96 Q100 84 200 96 T400 92 V120 H0Z" fill="rgba(255,255,255,.16)"/><path d="M150 60 h100 l-10 26 h-80Z M198 40 h4 v20 h-4Z" fill="rgba(255,255,255,.28)"/></svg><span class="chip value">Home port · no flights</span><span class="loc">Sails from Tampa</span></div>
-        <div class="card-body">
-          <h3>RCL Grandeur of the Seas</h3>
-          <div class="price"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">/family · interior (→$5,000 balcony)</span></div>
-          <ul class="facts"><li>7-nt Western Caribbean · Costa Maya, Belize, Roatán, Cozumel</li><li>Adventure Ocean kids club + dedicated teen program</li><li>Departs your home port — zero drive, ~$18/day parking</li><li><strong>Kids:</strong> no kids-sail-free over spring break (blacked out Mar 5–Apr 4, 2027); kids still pay taxes + ~$130 gratuities</li><li><strong>⚠ Verify:</strong> confirm the 2027 home port &amp; itinerary — this ship may be redeployed</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">4.8★</span><q>He attended kids club every day and actually cried about leaving the cruise.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>A smaller, older, senior-skewing ship — less dedicated space for kids.</q> <a href="https://cruiseline.com/ship/grandeur-of-the-seas/review/588892" target="_blank" rel="noopener">Cruiseline.com</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.royalcaribbean.com/itinerary/7-night-western-caribbean-cruise-from-tampa-on-grandeur-GR07W635" target="_blank" rel="noopener">View sailing<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C4E63,#08313F)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 96 Q100 84 200 96 T400 92 V120 H0Z" fill="rgba(255,255,255,.16)"/><path d="M155 58 h95 l-9 26 h-77Z" fill="rgba(255,255,255,.26)"/></svg><span class="chip nice">Biggest ship · ~2h drive</span><span class="loc">Port Canaveral</span></div>
-        <div class="card-body">
-          <h3>Norwegian Epic / Aqua</h3>
-          <div class="price"><span class="val num" data-count="3900" data-prefix="$">$0</span><span class="unit">/family · interior (→$5,400 balcony)</span></div>
-          <ul class="facts"><li>7-nt Caribbean · Splash Academy kids + Entourage teen club</li><li>Bigger, more activity-packed ship; ~1h45 drive from Tampa</li><li><strong>Kids:</strong> reduced 3rd/4th-guest fare (any age), not free over spring break; + full taxes &amp; ~$20/day gratuity</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Loved</span><q>Kids baked holiday cookies in the club; crew fantastic; Ie Bistro out of this world.</q></div><div class="rev gripe"><span class="lead">Gripe</span><q>Outdated, worn furniture, and no peaceful place away from the noise.</q> <a href="https://www.cruisecritic.com/cruise/norwegian-ncl/norwegian-epic/reviews/724678" target="_blank" rel="noopener">Cruise Critic</a></div></div>
-          <div class="card-cta"><a class="btn primary" href="https://gangwaze.com/cruise-lines/norwegian-cruise-line/norwegian-epic/2027-03-21/7-nights" target="_blank" rel="noopener">View sailing<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- CLEAR WATER -->
-<section id="clearwater">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">CLEAR-WATER ADDITIONS</span>
-      <h2>The postcard-water tier.</h2>
-      <p class="dropcap">The places we first skipped while chasing all-inclusive value — the ones people picture when they say "turquoise." One rule sorts them: <em>hurricane season</em>. March is safe everywhere; for a summer trip, only the ABC islands sit safely below the belt. Prices are 2026-rate estimates, per family of four unless noted.</p>
-    </div>
-    <div class="grid">
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0FA6C0,#0C5A7A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 72 200 88 T400 82 V120 H0Z" fill="rgba(255,255,255,.18)"/><path d="M0 100 Q100 86 200 100 T400 96 V120 H0Z" fill="rgba(255,255,255,.12)"/><circle cx="330" cy="36" r="18" fill="rgba(255,240,190,.5)"/></svg><span class="chip nice">Best clear-water fit</span><span class="loc">Nassau · Bahamas</span></div>
-        <div class="card-body">
-          <h3>Baha Mar</h3>
-          <div class="price"><span class="val num" data-count="8000" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
-          <ul class="facts"><li><strong>Baha Bay water park + kids clubs included</strong> — Grand Hyatt (families), Rosewood (the adults' quiet-luxury zone)</li><li>One campus keeps 5 families together, split by vibe</li><li><strong>Fly:</strong> nonstop Breeze TPA→Nassau ~$280–400 rt (Thu/Sun) · March = zero hurricane risk</li><li>The famous glass-clear water (pigs, sandbars, grotto) is a short Exuma hop</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Water parks + kids clubs on-site, closest clear water to Tampa, one resort for the whole group.</div><div class="rev gripe"><span class="lead">Alt</span> Atlantis (bigger single water park, pricier fees + 25% dining surcharge); or an <strong>Exuma villa cluster</strong> if the turquoise water <em>is</em> the trip.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.bahamar.com/" target="_blank" rel="noopener">Baha Mar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="https://www.atlantisbahamas.com/" target="_blank" rel="noopener">Atlantis</a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#12A08C,#0C5A6A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 76 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="64" cy="34" r="17" fill="rgba(255,240,190,.5)"/></svg><span class="chip value">Spring-break value</span><span class="loc">Rio Grande · Puerto Rico</span></div>
-        <div class="card-body">
-          <h3>Wyndham Rio Mar / El Conquistador</h3>
-          <div class="price"><span class="val num" data-count="1750" data-prefix="$">$0</span><span class="unit">/family · from (room-only)</span></div>
-          <ul class="facts"><li><strong>No passport, US dollars</strong> — a real win for moving 23 people</li><li>Nonstop TPA→San Juan ~$250–450 — cheapest air of the whole set</li><li>Flamenco Beach + the glowing bio-bay · resort kids clubs</li><li>In the hurricane belt — spring-break safe, not a summer pick</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Cheapest + easiest logistics of the clear-water tier; base on the main island, ferry to Culebra/Vieques for the postcard water.</div><div class="rev gripe"><span class="lead">Note</span> Reaching Culebra/Vieques adds a ferry or short flight — the one friction point.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.wyndhamhotels.com/wyndham-grand/rio-grande-puerto-rico/wyndham-grand-rio-mar-rainforest-beach-and-golf-resort/overview" target="_blank" rel="noopener">Rio Mar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C8F86,#0A4E5C)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="330" cy="38" r="16" fill="rgba(255,240,190,.45)"/></svg><span class="chip cheap">Summer storm-safe</span><span class="loc">Willemstad · Curaçao</span></div>
-        <div class="card-body">
-          <h3>Sunscape Curaçao</h3>
-          <div class="price"><span class="val num" data-count="3150" data-prefix="$">$0</span><span class="unit">/family · all-inclusive</span></div>
-          <ul class="facts"><li><strong>Below the hurricane belt</strong> — genuinely storm-safe all summer (like Aruba, ~20–30% cheaper)</li><li>Kids club <strong>and</strong> teen club, all-inclusive</li><li>Protected marine-park reef, 65–100 ft visibility year-round</li><li><strong>Fly:</strong> no nonstop — via Miami, ~$550–750 rt</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> The clear-water summer winner: Aruba-clear water, out of the storm zone, a real family+teen AI, and cheaper than Aruba.</div><div class="rev gripe"><span class="lead">Alt</span> Coral Estate villa cluster (~$1,800–3,600/family) for a villa split.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.hyatt.com/en-US/hotel/curacao/sunscape-curacao-resort-spa/sucur" target="_blank" rel="noopener">Sunscape<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="64" cy="36" r="16" fill="rgba(255,240,190,.45)"/></svg><span class="chip nice">Nonstop premium</span><span class="loc">Seven Mile Beach · Grand Cayman</span></div>
-        <div class="card-body">
-          <h3>Kimpton Seafire / Seascape Villa</h3>
-          <div class="price"><span class="val num" data-count="6300" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
-          <ul class="facts"><li><strong>Nonstop</strong> Cayman Airways from Tampa (~$450–650) · Level-1 safe</li><li>Camp Seafire + SPLASH water park; Stingray City (waist-deep, kid-perfect)</li><li>One villa (Seascape) sleeps <strong>21</strong> — nearly the whole group under one roof</li><li>In the hurricane belt — spring only</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> The slick "nonstop + one big villa" option, crystal-clear calm water, very safe.</div><div class="rev gripe"><span class="lead">Note</span> Expensive and à la carte — no all-inclusive culture; costs above Aruba.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.seafireresortandspa.com/" target="_blank" rel="noopener">Kimpton Seafire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0AA6B8,#0C5A6E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.2)"/><circle cx="330" cy="34" r="17" fill="rgba(255,244,200,.55)"/></svg><span class="chip deluxe">The splurge</span><span class="loc">Grace Bay · Turks &amp; Caicos</span></div>
-        <div class="card-body">
-          <h3>Beaches Turks &amp; Caicos</h3>
-          <div class="price"><span class="val num" data-count="15000" data-prefix="$">$0</span><span class="unit">/family · peak (est.)</span></div>
-          <ul class="facts"><li>Grace Bay — a repeat "World's Best Beach," 100+ ft visibility</li><li>All-inclusive with age-segmented kids camps + nurseries</li><li><strong>Fly:</strong> ~1 stop via Miami, ~$400–700 rt · Level 2 · in the belt (spring safe)</li><li>Summer off-season roughly halves the price</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Best beach + strongest single all-inclusive kids-club resort of the set.</div><div class="rev gripe"><span class="lead">Note</span> The costliest by far — no budget competition to Beaches; villas run into six figures for the group.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.beaches.com/resorts/turks-caicos/" target="_blank" rel="noopener">Beaches T&amp;C<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-band" style="background:linear-gradient(135deg,#0C8896,#0A4E5A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 78 200 92 T400 86 V120 H0Z" fill="rgba(255,255,255,.16)"/></svg><span class="chip cheap">Divers only</span><span class="loc">Kralendijk · Bonaire</span></div>
-        <div class="card-body">
-          <h3>Plaza Beach / Sand Dollar</h3>
-          <div class="price"><span class="val num" data-count="2200" data-prefix="$">$0</span><span class="unit">/unit · room-only</span></div>
-          <ul class="facts"><li>Arguably the <strong>best water</strong> of all — the whole coast is a marine park</li><li>Below the belt — storm-safe summer, like the other ABC islands</li><li><strong>Fly:</strong> infrequent, via Miami ~$576–1,069 rt; thin family infrastructure</li></ul>
-          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Elite snorkeling/diving water, Level-1 safe, storm-free in summer.</div><div class="rev gripe"><span class="lead">Note</span> A dive island — weak fit for 12 kids and the priciest per-head logistics. Only if the group is really about the water itself.</div></div>
-          <div class="card-cta"><a class="btn primary" href="https://www.plazaresortbonaire.com/en/valk-kids" target="_blank" rel="noopener">Plaza Bonaire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        </div>
-      </article>
-    </div>
-    <p style="margin-top:24px;font-size:.9rem;color:var(--ink-2)"><strong>Rule of thumb:</strong> spring break → <strong>Puerto Rico</strong> (cheapest, no passport) or the <strong>Bahamas</strong> (water parks); summer → <strong>Curaçao</strong> (storm-safe, Aruba-clear, cheaper). Grand Cayman is the premium nonstop, Turks &amp; Caicos the splurge, Bonaire only for divers. ⚠️ Note: Sandals Emerald Bay (Exuma) is <strong>closed</strong> and rebuilding as a family resort — not available for 2027.</p>
-  </div>
-</section>
-
-<!-- EVERY SAFE ISLAND -->
-<section id="islands">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">THE FULL SET</span>
-      <h2>Every other safe island.</h2>
-      <p class="dropcap">The complete safe-Caribbean lineup, each with a Tampa airfare estimate. We've left out <strong>Haiti</strong> (Level 4 "Do Not Travel") and <strong>Trinidad's mainland</strong> (Level 3); <strong>Jamaica</strong> and <strong>St. Lucia</strong> carry Level 2 crime advisories, flagged below. Use the <strong>destination pull-down</strong> at the top to jump to any single island.</p>
-    </div>
-    <div class="grid">
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip value">Only nonstop AI</span><span class="loc">Negril · Jamaica</span></div><div class="card-body"><h3>Beaches Negril</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> nonstop Breeze TPA→Montego Bay ~$250–450 rt</li><li><strong>Safety:</strong> Level 2 (crime; resort zones fine) · in the belt</li><li>Seven Mile Beach; the most turnkey big-family AI</li></ul><div class="card-cta"><a class="btn primary" href="https://www.beaches.com/resorts/negril/" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Cheapest + safest</span><span class="loc">Hastings · Barbados</span></div><div class="card-body"><h3>Sugar Bay Barbados</h3><div class="price"><span class="val num" data-count="1800" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$400–700 rt</li><li><strong>Safety:</strong> Level 1 · largely outside the belt (lowest risk)</li><li>Kids stay free; calm west-coast turquoise water</li></ul><div class="card-cta"><a class="btn primary" href="https://www.sugarbaybarbados.com/families" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Pitons + water park</span><span class="loc">Vieux Fort · St. Lucia</span></div><div class="card-body"><h3>Coconut Bay</h3><div class="price"><span class="val num" data-count="3500" data-prefix="$">$0</span><span class="unit">/family · with promo</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Charlotte/Miami ~$550–750 rt</li><li><strong>Safety:</strong> Level 2 (crime) · in the belt</li><li>On-site water park + kids club; calm Piton-side beaches</li></ul><div class="card-cta"><a class="btn primary" href="https://cbayresort.com/splash/cocoland/cocoland-kidz-klub" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Villa play</span><span class="loc">Maho · St. Maarten</span></div><div class="card-body"><h3>Sonesta Maho / villas</h3><div class="price"><span class="val num" data-count="3800" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/FLL ~$450–650 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Irma 2017)</li><li>Villas sleep 20+; famous Maho jet-spotting beach</li></ul><div class="card-cta"><a class="btn primary" href="https://sonestastmaarten.com/mahobeach/" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip deluxe">World-class beaches</span><span class="loc">Rendezvous Bay · Anguilla</span></div><div class="card-body"><h3>Aurora / private villas</h3><div class="price"><span class="val num" data-count="3500" data-prefix="$">$0</span><span class="unit">/family · from (villa share)</span></div><ul class="facts"><li><strong>Fly:</strong> TPA→SXM + ferry hop ~$400–750 rt all-in</li><li><strong>Safety:</strong> Level 1 · in the belt</li><li>Shoal Bay East = #6 beach on Earth; the splurge</li></ul><div class="card-cta"><a class="btn primary" href="https://www.wimco.com/villa-rentals/caribbean/anguilla" target="_blank" rel="noopener">View villas</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Suites w/ kitchens</span><span class="loc">Frigate Bay · St. Kitts &amp; Nevis</span></div><div class="card-body"><h3>Marriott St. Kitts Beach Club</h3><div class="price"><span class="val num" data-count="3600" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/Charlotte ~$536–900 rt</li><li><strong>Safety:</strong> Level 1 · in the belt</li><li>Villa-style suites w/ kitchens; calm Cockleshell Beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.marriott.com/en-us/hotels/skbmc-marriotts-st-kitts-beach-club/overview/" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Turnkey AI · lower risk</span><span class="loc">Grand Anse · Grenada</span></div><div class="card-body"><h3>Royalton Grenada</h3><div class="price"><span class="val num" data-count="5000" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$636 rt</li><li><strong>Safety:</strong> Level 2 · southern edge of belt (lower risk)</li><li>Kids club + splash park; 2-mi Grand Anse Beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.royaltonresorts.com/resorts/grenada" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Turtle snorkeling</span><span class="loc">Bequia · St. Vincent &amp; Grenadines</span></div><div class="card-body"><h3>Bequia Beach Hotel</h3><div class="price"><span class="val num" data-count="5600" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/San Juan ~$500–600 rt</li><li><strong>Safety:</strong> Level 1 · southern edge of belt</li><li>Free kids club; Tobago Cays sea-turtle snorkeling</li></ul><div class="card-cta"><a class="btn primary" href="https://bequiabeachhotel.com/accommodation" target="_blank" rel="noopener">View hotel</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Cheapest lodging · nature</span><span class="loc">Roseau · Dominica</span></div><div class="card-body"><h3>Fort Young Hotel</h3><div class="price"><span class="val num" data-count="1400" data-prefix="$">$0</span><span class="unit">/family · from (room-only)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/San Juan ~$536–756 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Maria 2017)</li><li>Rainforest/rivers/diving — few classic beaches</li></ul><div class="card-cta"><a class="btn primary" href="https://www.fortyounghotel.com/en/" target="_blank" rel="noopener">View hotel</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Best water · sailing</span><span class="loc">Tortola · BVI (not USVI)</span></div><div class="card-body"><h3>BVI villas / Scrub Island</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami or San Juan ~$592–900 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Irma 2017)</li><li>The Baths &amp; world-class snorkeling; villa-driven, small connector planes</li></ul><div class="card-cta"><a class="btn primary" href="https://www.scrubisland.com/" target="_blank" rel="noopener">View options</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip value">Villa better than resort</span><span class="loc">Sainte-Anne · Martinique</span></div><div class="card-body"><h3>Villa cluster (French)</h3><div class="price"><span class="val num" data-count="2800" data-prefix="$">$0</span><span class="unit">/family · lodging</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$650–750 rt</li><li><strong>Safety:</strong> Level 1 (French W. Indies) · in the belt</li><li>⚠ Club Med here has <em>no</em> kids club — go villa; Les Salines beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.clubmed.us/r/buccaneer-s-creek/y" target="_blank" rel="noopener">View options</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip deluxe">Best French kids clubs</span><span class="loc">Sainte-Anne · Guadeloupe</span></div><div class="card-body"><h3>Club Med La Caravelle</h3><div class="price"><span class="val num" data-count="8000" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$550–650 rt</li><li><strong>Safety:</strong> Level 1 (French W. Indies) · in the belt</li><li>Full kids (4–10) + junior/teen (11–17) clubs — strongest turnkey French fit</li></ul><div class="card-cta"><a class="btn primary" href="https://www.clubmed.us/r/caravelle/y" target="_blank" rel="noopener">View resort</a></div></div></article>
-
-      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C8896,#0A4E5A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Storm-safe · reef</span><span class="loc">Lowlands · Tobago</span></div><div class="card-body"><h3>Magdalena Grand</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Trinidad ~$450–750 rt</li><li><strong>Safety:</strong> Tobago is safer than T&amp;T's Level 3 label · <strong>below the belt</strong> (summer-safe)</li><li>Buccoo Reef + Nylon Pool; calm Pigeon Point</li></ul><div class="card-cta"><a class="btn primary" href="https://www.magdalenagrand.com/" target="_blank" rel="noopener">View resort</a></div></div></article>
-    </div>
-    <p style="margin-top:22px;font-size:.86rem;color:var(--ink-2)">Every price is a 2026-rate estimate, per family of four, 7 nights. <strong>Airfare shown is round-trip per person from Tampa</strong> — remember it multiplies by household size (use the "My family" pull-down). Hurricane note: only the ABC islands, Grenada, St. Vincent (edge) and Tobago sit safely below the belt for a summer trip; everything else is spring-break-safe but a summer gamble.</p>
-  </div>
-</section>
-
-<!-- DEALS -->
-<section id="deals" class="deals">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">THE LEVERAGE</span>
-      <h2>Booking twenty-three people at once.</h2>
-      <p>At seven rooms you sit just under most group thresholds (resorts want 10, cruise lines want 8). The fixes are concrete — and one move unlocks nearly all of them.</p>
-    </div>
-    <div class="moves">
-      <div class="move reveal"><span class="mno"></span><div><h4>Put a group travel agent in front of it all</h4><p>They fold you into existing group inventory below the official minimums and pass the comp rooms / onboard credit down to you — and set up a portal where each family pays their own room. The commission's paid by the resort, not you.</p></div><div class="impact">Unlocks<br>everything ↓</div></div>
-      <div class="move reveal"><span class="mno"></span><div><h4>Resort: aim Hyatt (Secrets / Dreams) off-peak</h4><p>Low/mid-season gives 1 free room per 6 — your 7 rooms already earns a comp room. Spring break blacks it out (drops to 1-per-10), so this favors the summer trip.</p></div><div class="impact">~$2,000–3,500<br>free room</div></div>
-      <div class="move reveal"><span class="mno"></span><div><h4>Cruise: book NCL 15+ months out, or add an 8th cabin on Royal</h4><p>Norwegian clears your 7-cabin count alone and gives 15% off brochure fare at 451+ days. An 8th cabin on Royal triggers a free berth + $50/cabin credit.</p></div><div class="impact">~$150–1,500<br>per group</div></div>
-      <div class="move reveal"><span class="mno"></span><div><h4>Flights: use the group desk for flexibility, not discount</h4><p>Lock 23 seats now with a small deposit, names &amp; balance later, cheap name swaps if a family drops. Southwest's two free bags is a real per-family save.</p></div><div class="impact">price lock<br>+~$60–140/fam</div></div>
-      <div class="move reveal"><span class="mno"></span><div><h4>Villa: book direct, not Airbnb / VRBO</h4><p>Skip the 6–15.5% platform fee on a booking this size and negotiate a free night, chef days, or airport transport as a big-booking concession.</p></div><div class="impact">~$1,000–6,000<br>saved</div></div>
-    </div>
-
-    <h3 style="color:#fff;margin-bottom:18px;font-size:1.3rem">Group desks — call these</h3>
-    <div class="desks">
-      <div class="desk reveal"><div class="dn">Palace / Moon Palace</div><a href="tel:+18887317625">☏ 888-731-7625</a><a href="mailto:rssgroups@palaceresorts.com">✉ rssgroups@palaceresorts.com</a></div>
-      <div class="desk reveal"><div class="dn">Hyatt Inclusive (Secrets/Dreams)</div><a href="https://www.hyattinclusivecollection.com/en/special-offers/social-stays-that-pay/" target="_blank" rel="noopener">↗ Social Stays That Pay</a></div>
-      <div class="desk reveal"><div class="dn">Royal Caribbean groups</div><a href="https://www.royalcaribbean.com/gbr/en/faq/questions/group-reservation-discount-policy" target="_blank" rel="noopener">↗ Group policy &amp; free berth</a></div>
-      <div class="desk reveal"><div class="dn">Norwegian groups</div><a href="https://www.travelmarketreport.com/cruises/articles/here-are-all-the-cruise-line-group-policies" target="_blank" rel="noopener">↗ Tiered group discount</a></div>
-      <div class="desk reveal"><div class="dn">JetBlue group travel</div><a href="tel:+18885382583">☏ 888-538-2583</a><a href="https://www.jetblue.com/help/group-bookings" target="_blank" rel="noopener">↗ Group bookings</a></div>
-      <div class="desk reveal"><div class="dn">Barceló Maya group desk</div><a href="tel:+18887740040">☏ 888-774-0040</a><a href="mailto:mayapalace@barcelo.com">✉ mayapalace@barcelo.com</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- MATRIX -->
-<section id="matrix" style="background:color-mix(in srgb,var(--teal) 5%,var(--paper))">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">SIDE BY SIDE</span>
-      <h2>Every destination, by the range.</h2>
-      <p>The spread of every location and approach — cheapest to priciest — so you get the picture without filtering. Per family of four, 7 nights (adults-only villas noted per adult); airfare is round-trip per person from Tampa. Our top picks are in the shortlist below.</p>
-    </div>
-    <div class="callout reveal" style="margin-bottom:26px"><strong>Range by approach (per family, 7 nt):</strong> &nbsp;<strong>Cruise</strong> $3,700 → $5,400 (from Tampa, no flights) &nbsp;·&nbsp; <strong>All-inclusive</strong> $1,800 (Barbados) → $15,000+ (Turks), most land $4k–8k &nbsp;·&nbsp; <strong>Villa split</strong> $1,700 (Aruba) → $8,000+ (Anguilla), plus flights &nbsp;·&nbsp; <strong>Two trips</strong> ~$5,900 total.</div>
-    <div class="table-scroll reveal" style="margin-bottom:38px">
-      <table>
-        <thead><tr><th>Destination</th><th>Best fit</th><th class="n">Per-family · 7 nt</th><th class="n">Air / person</th><th>Safety</th><th>Summer-safe?</th></tr></thead>
-        <tbody>
-          <tr><td>El Salvador</td><td>Adults villa</td><td class="n">$1,000 /adult</td><td class="n">$375–500</td><td>Level 1</td><td>Pacific — n/a</td></tr>
-          <tr><td>Dominica</td><td>Resort (room-only)</td><td class="n">$1,400–2,800</td><td class="n">$536–756</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Aruba</td><td>Villa</td><td class="n">$1,700–1,835</td><td class="n">$450–650</td><td>Level 1</td><td><span class="pill" style="background:var(--good)">Below belt</span></td></tr>
-          <tr><td>Puerto Rico</td><td>Resort</td><td class="n">$1,750–3,500</td><td class="n">$250–450</td><td>US · none</td><td>Spring only</td></tr>
-          <tr><td>Barbados</td><td>All-inclusive</td><td class="n">$1,800–2,600</td><td class="n">$400–700</td><td>Level 1</td><td>Edge (lower)</td></tr>
-          <tr><td>Mexico — villa</td><td>Villa</td><td class="n">$2,065–4,004</td><td class="n">$300–500</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>Bonaire</td><td>Resort (room-only)</td><td class="n">$2,200 /unit</td><td class="n">$576–1,069</td><td>Level 1</td><td><span class="pill" style="background:var(--good)">Below belt</span></td></tr>
-          <tr><td>Antigua</td><td>Villa</td><td class="n">$2,240–5,290</td><td class="n">$510–720</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Martinique</td><td>Villa</td><td class="n">$2,800–4,900</td><td class="n">$650–750</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Curaçao</td><td>AI or villa</td><td class="n">$3,150 AI · $1,800+ villa</td><td class="n">$550–750</td><td>Level 1</td><td><span class="pill" style="background:var(--good)">Below belt</span></td></tr>
-          <tr><td>Costa Rica</td><td>Villa</td><td class="n">$3,528</td><td class="n">$324–601</td><td>Level 1–2</td><td>Spring only</td></tr>
-          <tr><td>St. Lucia</td><td>All-inclusive</td><td class="n">$3,500–5,000</td><td class="n">$550–750</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>St. Kitts &amp; Nevis</td><td>Resort suites</td><td class="n">$3,600–4,200</td><td class="n">$536–900</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Cruise (from FL)</td><td>Cruise</td><td class="n">$3,700–5,400</td><td class="n">none · drive</td><td>—</td><td>Either</td></tr>
-          <tr><td>St. Maarten</td><td>AI or villa</td><td class="n">$3,800–4,500</td><td class="n">$450–650</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Mexico — family AI</td><td>All-inclusive</td><td class="n">$4,300–11,200</td><td class="n">$300–500</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>Jamaica</td><td>All-inclusive</td><td class="n">$4,500–6,500</td><td class="n">$250–450</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>BVI</td><td>Villa</td><td class="n">$4,500–6,000</td><td class="n">$592–900</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Tobago</td><td>Resort</td><td class="n">$4,500–6,500</td><td class="n">$450–750</td><td>L3 country*</td><td><span class="pill" style="background:var(--good)">Below belt</span></td></tr>
-          <tr><td>Grenada</td><td>All-inclusive</td><td class="n">$5,000–5,500</td><td class="n">~$636</td><td>Level 2</td><td>Edge (lower)</td></tr>
-          <tr><td>St. Vincent</td><td>Resort/villa</td><td class="n">$5,600–8,400</td><td class="n">$500–600</td><td>Level 1</td><td>Edge (lower)</td></tr>
-          <tr><td>Anguilla</td><td>Villa</td><td class="n">$3,500–8,000+</td><td class="n">$400–750</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Grand Cayman</td><td>Resort/villa</td><td class="n">$6,300–10,500</td><td class="n">$450–650</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Bahamas</td><td>AI or villa</td><td class="n">$6,000–12,000</td><td class="n">$280–400</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>Dominican Republic</td><td>All-inclusive</td><td class="n">$6,800–8,200</td><td class="n">$550–750</td><td>Level 2</td><td>Spring only</td></tr>
-          <tr><td>Guadeloupe</td><td>All-inclusive</td><td class="n">$8,000–10,500</td><td class="n">$550–650</td><td>Level 1</td><td>Spring only</td></tr>
-          <tr><td>Turks &amp; Caicos</td><td>All-inclusive</td><td class="n">$15,000–20,000</td><td class="n">$400–700</td><td>Level 2</td><td>Spring only</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:.8rem;color:var(--ink-2);margin:-24px 0 34px">*Tobago's country (Trinidad &amp; Tobago) is Level 3, but Tobago itself is materially safer and sits below the hurricane belt. All figures are 2026-rate estimates.</p>
-    <h3 style="margin-bottom:16px;font-size:1.3rem">The shortlist — our top picks</h3>
-    <div class="table-scroll reveal">
-      <table>
-        <thead><tr><th>Format</th><th>Pick</th><th>Where</th><th>Basis</th><th class="n">All-in</th></tr></thead>
-        <tbody>
-          <tr><td>Cruise</td><td>RCL Grandeur <span class="pill">cheapest together</span></td><td>Tampa (no flights)</td><td>per family</td><td class="n">$3,700</td></tr>
-          <tr><td>Two trips</td><td>CR villa + summer villa <span class="pill">best idea</span></td><td>Costa Rica + Aruba</td><td>per family · 2 wks · flights in</td><td class="n">$5,900</td></tr>
-          <tr><td>Cruise</td><td>Norwegian Epic</td><td>Port Canaveral</td><td>per family</td><td class="n">$3,900</td></tr>
-          <tr><td>Family AI</td><td>Barceló Maya Palace</td><td>Riviera Maya</td><td>per family</td><td class="n">$4,300</td></tr>
-          <tr><td>Family AI</td><td>Moon Palace Cancún <span class="pill">best value</span></td><td>Cancún</td><td>per family</td><td class="n">$6,050</td></tr>
-          <tr><td>Family AI</td><td>Barceló Bávaro Palace</td><td>Punta Cana</td><td>per family</td><td class="n">$6,800</td></tr>
-          <tr><td>Family AI</td><td>Dreams Macao</td><td>Punta Cana</td><td>per family</td><td class="n">$7,500</td></tr>
-          <tr><td>Family AI</td><td>Hard Rock Punta Cana</td><td>Punta Cana</td><td>per family</td><td class="n">$8,200</td></tr>
-          <tr><td>Family AI</td><td>Hotel Xcaret México</td><td>Playa del Carmen</td><td>per family</td><td class="n">$11,200</td></tr>
-          <tr><td>Adults villa</td><td>Costa Rica Casa Cox <span class="pill">value luxury</span></td><td>Guanacaste</td><td>per adult</td><td class="n">$1,150</td></tr>
-          <tr><td>Adults AI</td><td>Riu Republica</td><td>Punta Cana</td><td>per adult</td><td class="n">$1,340</td></tr>
-          <tr><td>Adults AI</td><td>Excellence Riviera Cancun</td><td>Riviera Maya</td><td>per adult</td><td class="n">$1,925</td></tr>
-          <tr><td>Adults AI</td><td>UNICO 20°87°</td><td>Riviera Maya</td><td>per adult</td><td class="n">$2,675</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- NEXT STEPS -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="chapter-no">WHAT NOW</span>
-      <h2>The clock is the constraint.</h2>
-      <p>Peak-season 2027 inventory — adjacent cabins, same room category, whole-villa availability — is what runs out, not the deals. The best comp ratios go to early bookers.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><span class="when">Now → next few weeks</span><h4>Pick a lane &amp; poll the families</h4><p>Vote the format (cruise / group AI / two-trip) and a first &amp; second destination. Confirm who's in — an 8th room/cabin clears most group thresholds.</p></div>
-      <div class="step reveal"><span class="when">This spring (2026)</span><h4>Engage one group agent</h4><p>Hand them the shortlist. They lock a group block, pass down comps, and open the per-family payment portal. You're already inside the cruise-group window.</p></div>
-      <div class="step reveal"><span class="when">~11 months out</span><h4>Confirm live quotes</h4><p>2027 resort inventory opens ~spring 2026. Re-price the estimates here against real group quotes and lock the block before rates climb.</p></div>
-      <div class="step reveal"><span class="when">Book flights early</span><h4>Group desk for the thin nonstops</h4><p>The single daily TPA nonstop to Cancún/Punta Cana sells out fast — reserve 23 seats with a small deposit, settle names later.</p></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <b>Blue Water Nine — Caribbean 2027</b>
-    <p>Five families · twenty-three travelers · researched from Tampa, July 2026.</p>
-    <div class="disc">
-      <strong style="color:#EAF4F1">On the numbers:</strong> 2027 isn't bookable yet, so every price here is a planning estimate built from current-season rates plus a spring-break premium — except a handful of live quotes (Moon Palace, Hotel Xcaret) marked "Live quote." Villa and flight figures move most. <strong style="color:#EAF4F1">"All-in" includes round-trip airfare from Tampa</strong> (and cars where noted); <strong style="color:#EAF4F1">cruises need no airfare</strong> — you drive to the port; <strong style="color:#EAF4F1">summer-villa prices are lodging only</strong>, with flights ~$450–650/person on top. Treat all of it as directional and confirm with real group quotes before committing. Reviews are a real random sample from TripAdvisor, Booking.com, Google, Cruise Critic and agency pages; where a specific villa had no public reviews we said so rather than invent one. Every figure links to its source.
-    </div>
-    <p style="color:#6FA398;font-family:var(--mono);font-size:.72rem">A decision aid, not a booking. Prices in USD.</p>
-  </div>
-</footer>
+<footer><div class="wrap"><b>Blue Water Nine — Caribbean 2027</b><span>Every price is a 2026-rate planning estimate for un-bookable 2027 dates — confirm with group quotes (they beat OTA rates for 20+ rooms). "Kids free" deals are usually blacked out over spring break. Airfare is round-trip per person from Tampa. Adults-only options are priced per couple. Excludes Haiti &amp; Trinidad mainland as unsafe.</span></div></footer>
 
 <script>
 (function(){
-  document.documentElement.classList.add('js');
-  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var root=document.documentElement;
+document.getElementById('themeToggle').addEventListener('click',function(){var c=root.getAttribute('data-theme');if(!c)c=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';root.setAttribute('data-theme',c==='dark'?'light':'dark');});
 
-  /* theme toggle */
-  var root=document.documentElement, tg=document.getElementById('themeToggle');
-  tg.addEventListener('click',function(){
-    var cur=root.getAttribute('data-theme');
-    if(!cur){cur = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark':'light';}
-    root.setAttribute('data-theme', cur==='dark'?'light':'dark');
+// t: budget|value|premium|villa|adults · p: per-family USD (adults = per couple, cpl:1) · k/tn: kids/teen club
+function o(t,n,p,pr,k,tn,who,u,cpl){return {t:t,n:n,p:p,pr:pr,k:k,tn:tn,who:who,u:u,cpl:cpl||0};}
+var DATA=[
+ {id:'bahamas',name:'Bahamas',air:'Nonstop Breeze ~$250–450',nonstop:1,safe:'Level 2',storm:0,water:'World-clear (Exuma)',opts:[
+   o('budget','Comfort Suites Paradise Island',3200,'$2,600–3,800',0,0,'Budget lodging with free Atlantis water-park access','https://www.comfortsuitespi.com/'),
+   o('value','Grand Hyatt Baha Mar',6500,'$5,500–7,500',1,1,'Kids (3–12) + Vibez teen (13–17) + Baha Bay water park','https://www.hyatt.com/grand-hyatt/en-US/nasgh-grand-hyatt-baha-mar'),
+   o('premium','Atlantis — The Coral',9500,'$8,500–10,500',1,1,'Biggest water park (Aquaventure) + kids & CRUSH teen clubs','https://www.atlantisbahamas.com/'),
+   o('villa','Villa Exuma (2 villas)',9000,'$7,400–12,000',0,0,'Two beachfront villas, sleeps ~20, self-catered privacy','https://www.thegoodlifebahamasrentals.com/property/villa-exuma/'),
+   o('adults','Sandals Royal Bahamian',5000,'$3,600–8,000',0,0,'Adults-only AI parents’ break; Warwick PI is the value 21+ pick','https://www.sandals.com/royal-bahamian/',1)]},
+ {id:'dominican republic',name:'Dominican Republic · Punta Cana',air:'Nonstop JetBlue ~$450–700',nonstop:1,safe:'Level 2',storm:0,water:'Calm Bávaro / Cap Cana',opts:[
+   o('budget','Barceló Bávaro Palace',2300,'$1,800–2,800',1,0,'Proven huge budget AI + free Pirates Island water park','https://www.barcelo.com/en-us/barcelo-bavaro-palace/'),
+   o('value','Lopesan Costa Bávaro',2900,'$2,300–3,600',1,1,'Best age-spread fit — confirmed kids AND Vibe teen club','https://www.lopesancostabavaro.com/en/'),
+   o('premium','Hyatt Ziva Cap Cana',6000,'$5,500–6,700',1,1,'Upscale + real teen club (per-child surcharge on older kids)','https://www.hyatt.com/ziva/en-US/pujif-hyatt-ziva-cap-cana'),
+   o('villa','9BR villa, Cocotal (sleeps 24)',5200,'$4,200–6,300',0,0,'Whole group one roof, chef + 2 maids, gated','https://www.vrbo.com/1395802'),
+   o('adults','Sanctuary Cap Cana',3500,'$3,500+/couple',0,0,'Adults-only Luxury Collection carve-out for a couple','https://www.marriott.com/en-us/hotels/pujlc-sanctuary-cap-cana',1)]},
+ {id:'mexico',name:'Mexico · Cancún / Riviera Maya',air:'Nonstop JetBlue/Breeze ~$450–700',nonstop:1,safe:'Level 2',storm:0,water:'Caribbean turquoise',opts:[
+   o('budget','Royal Solaris Cancún',2500,'$2,000–3,000',1,0,'Beachfront value with kids club + mini water park','https://clubsolaris.com/resort/royal-solaris-cancun'),
+   o('value','The Fives Beach, Playa del Carmen',5600,'$4,900–6,300',1,1,'Suite-style with separate kids AND teen clubs','https://www.thefiveshotels.com/the-fives-beach-hotel--residences.html'),
+   o('premium','Grand Velas Riviera Maya',11000,'$8,400–14,000',1,1,'Ultra-luxury AI, two kids clubs + teen club','https://rivieramaya.grandvelas.com/'),
+   o('villa','Riviera Maya villa compound',18000,'$13,000–23,000',0,0,'Chef + staff, whole group — costs like luxury, buys privacy','https://villaexperience.com/riviera-maya-vacations-rentals-larger-groups/'),
+   o('adults','Excellence Riviera Cancún',2850,'$2,100–3,600/couple',0,0,'Adults-only luxury AI near the family resorts','https://www.excellenceresorts.com/riviera-maya-cancun/excellence-riviera-cancun/',1)]},
+ {id:'jamaica',name:'Jamaica · Montego Bay / Negril',air:'Nonstop Breeze ~$350–550',nonstop:1,safe:'Level 2',storm:0,water:'Negril Seven Mile',opts:[
+   o('budget','Iberostar Rose Hall Suites',5000,'$4,500–6,500',1,0,'All-suite AI + Aquafun water park (no teen program)','https://www.iberostar.com/en/hotels/montego-bay/iberostar-selection-rose-hall-suites/'),
+   o('value','Beaches Negril',7000,'$5,700–8,900',1,1,'Flagship family AI, Pirates water park, teen center 15–17','https://www.beaches.com/resorts/negril/'),
+   o('premium','Half Moon',4500,'$3,500–5,000 (semi-incl)',1,1,'Quiet luxury + the best teen program (Hype Zone 13–19)','https://www.halfmoon.com/'),
+   o('villa','Haystack at Tryall Club',6000,'$6,000 (villa+fees)',0,0,'10BR villa sleeps ~20, chef, one-roof togetherness','https://www.tripsite.com/villa/haystack-at-the-tryall-club-montego-bay-jamaica/'),
+   o('adults','Sandals South Coast',4400,'$3,800–5,000/couple',0,0,'Adults-only overwater-villa parents’ escape','https://www.sandals.com/south-coast/',1)]},
+ {id:'puerto rico',name:'Puerto Rico',air:'Nonstop SJU ~$250–400',nonstop:1,safe:'Level 1 · US',storm:0,water:'Flamenco + bio-bay',opts:[
+   o('budget','Fajardo Inn',1260,'$1,260',0,0,'Cheapest — pools + waterslide near El Yunque, no passport','https://www.fajardoinn.com/'),
+   o('value','Wyndham Grand Rio Mar',2275,'$2,100–2,450',1,0,'Full-service beach resort, Xplorers kids club, 600 acres','https://www.wyndhamhotels.com/wyndham-grand/rio-grande-puerto-rico'),
+   o('premium','El Conquistador (Waldorf Astoria)',2575,'$2,450–2,700',1,0,'Big water park + private Palomino Island; luxury value','https://www.hilton.com/en/hotels/sjuwawa-el-conquistador-resort/'),
+   o('villa','Coco Beach Resort condos',1600,'$1,400–1,800/condo',0,0,'3BR beachfront condos with kitchens — cluster the families','https://www.vrbo.com/'),
+   o('adults','Yuquiyú Treehouses',2436,'$2,436 (2 guests)',0,0,'Off-grid rainforest treehouse for a couple’s night','https://www.yuquiyu.com/',1)]},
+ {id:'aruba',name:'Aruba',air:'1 stop via MIA/FLL ~$450–750',nonstop:0,safe:'Level 1',storm:1,water:'Clear, calm',opts:[
+   o('budget','Holiday Inn Resort Aruba',3400,'$2,700–4,200',1,0,'2 kids ≤12 stay free; Palm Beach, pools, optional AI','https://www.ihg.com/holidayinnresorts/hotels/us/en/aruba/auaan/hoteldetail'),
+   o('value','Divi & Tamarijn All-Inclusive',7000,'$5,500–8,500',1,1,'True AI with kids club (4–12) AND teen program','https://www.diviandtamarijnaruba.com/'),
+   o('premium','The Ritz-Carlton, Aruba',12000,'$9,500–16,000',1,0,'Genuine 5-star Palm Beach splurge','https://www.ritzcarlton.com/en/hotels/auart-the-ritz-carlton-aruba/'),
+   o('villa','Malmok villa cluster (2 villas)',2400,'$2,000–2,800',0,0,'Cheapest per-person — but no beachfront, no programming','https://www.thetopvillas.com/en_us/destinations/caribbean/aruba/malmok/aruba-56'),
+   o('adults','Bucuti & Tara (Eagle Beach)',7000,'$5,700–8,000/couple',0,0,'Adults-only eco-luxe (Riu Palace Antillas is the value 18+)','https://www.bucuti.com/',1)]},
+ {id:'curacao',name:'Curaçao',air:'1 stop via MIA ~$650–900',nonstop:0,safe:'Level 1',storm:1,water:'Reef-clear marine park',opts:[
+   o('budget','Kunuku Aqua Resort',1750,'$1,600–1,900',1,0,'Cheapest AI + on-site water park (12 slides), storm-safe','https://kunukuresort.com/en/home-en/'),
+   o('value','Sunscape Curaçao',4650,'$4,300–5,000',1,1,'Kids (3–12) + Core Zone teen (13–17); the age-spread winner','https://hyattinclusivecollection.com/en/resorts-hotels/sunscape/curacao/'),
+   o('premium','Curaçao Marriott Beach Resort',3200,'$3,150+ room-only',1,0,'Upscale beachfront, kids ≤16 free, kids club 4–10','https://www.marriott.com/en-us/hotels/curpb-curacao-marriott-beach-resort/'),
+   o('villa','Sirena Bay Estate',4335,'$4,335 (sleeps 20)',0,0,'Private historic compound with butler; ~3 short of 23','https://www.sirenabay.com/villa'),
+   o('adults','LionsDive Sleep & Dive',4390,'$4,390/couple',0,0,'Dive-focused base for the adult/diver contingent','https://www.oceanencounters.com/lionsdive-sleep-and-dive-specials/',1)]},
+ {id:'grand cayman',name:'Grand Cayman',air:'Nonstop Cayman Air ~$450–750',nonstop:1,safe:'Level 1',storm:0,water:'Clear Seven Mile Beach',opts:[
+   o('budget','The Sunshine Hotel & Suites',2750,'$2,500–3,000',0,0,'All-suite with kitchens, walk to Seven Mile Beach','https://sunshinesuites.com/'),
+   o('value','Grand Cayman Marriott',3150,'$2,900–3,400',1,0,'Beachfront + kids club (5–12); island’s value standout','https://www.marriott.com/en-us/hotels/gcmgc-grand-cayman-marriott-resort/'),
+   o('premium','Kimpton Seafire Resort + Spa',16000,'$14,000–20,000',1,0,'5-star boutique, Camp Seafire + SPLASH water park','https://www.seafireresortandspa.com/'),
+   o('villa','Villas of the Galleon',5250,'$28–32k total group',0,0,'Cluster on Seven Mile Beach, kitchens, one property','https://www.villasofthegalleon.com/'),
+   o('adults','Black Urchin private estate',37000,'$25–50k+ total',0,0,'Secluded 2.5-acre estate buyout (not adults-only, just private)','https://www.blackurchin.com/',1)]},
+ {id:'barbados',name:'Barbados',air:'1 stop via MIA ~$500–800',nonstop:0,safe:'Level 1',storm:0,water:'West-coast calm turquoise',opts:[
+   o('budget','Coconut Court Beach Hotel',1900,'$1,750–2,100',0,0,'Cheapest true beachfront, 2BR apartments w/ kitchens','https://www.coconut-court.com/'),
+   o('value','Sugar Bay Barbados',2450,'$2,450 (kids free)',1,1,'Kids stay free + both kids and teen clubs; great value','https://www.sugarbaybarbados.com/families'),
+   o('premium','The Crane Resort',3700,'$3,150–4,200',1,0,'Iconic cliff-top suites, Calypso Kids Club','https://www.thecrane.com/'),
+   o('villa','Crystal Springs',11200,'$11,200/family',0,0,'10BR villa, private cove (sleeps ~20)','https://www.thetopvillas.com/en_us/destinations/caribbean/barbados/st-james/the-garden/crystal-springs'),
+   o('adults','Cobblers Cove',4800,'$3,600–6,000/couple',0,0,'Adults-only boutique (no under-12s Jan–Mar)','https://www.cobblerscove.com/',1)]},
+ {id:'antigua',name:'Antigua',air:'1 stop via MIA ~$550–950',nonstop:0,safe:'Level 1',storm:0,water:'365 beaches',opts:[
+   o('budget','Antigua Village Beach Resort',2900,'$2,800–3,050',0,0,'Budget condos w/ kitchens on Dickenson Bay, no age limit','https://www.antiguavillage.com/'),
+   o('value','Royalton Antigua',4900,'$4,550–5,250',1,1,'AI with kids club (4–12) AND dedicated teen lounge (13–17)','https://www.royaltonresorts.com/resorts/royalton-antigua'),
+   o('premium','Carlisle Bay',7350,'$7,350',1,0,'Quiet 5-star with two age-banded kids clubs','https://www.carlisle-bay.com/'),
+   o('villa','Nonsuch Bay villa cluster',5770,'$5,770/family',0,0,'3 adjacent villas for ~23, resort access nearby','https://isleblue.co/villas/vacation-rentals/caribbean/antigua/nonsuch-bay/villa-nonsuch'),
+   o('adults','Hermitage Bay',14000,'$14,000/couple',0,0,'Ultra-lux adults/14+ carve-out','https://www.hermitagebay.com/',1)]},
+ {id:'turks',name:'Turks & Caicos',air:'1 stop via MIA ~$500–900',nonstop:0,safe:'Level 2',storm:0,water:'Clearest of all (Grace Bay)',opts:[
+   o('budget','The Sands at Grace Bay',6500,'$5,500–7,500',0,0,'Grace Bay beachfront 2BR suites w/ kitchens (no kids club)','https://thesandstc.com/'),
+   o('value','Alexandra Resort (AI)',8750,'$7,500–10,000',1,0,'All-inclusive, kids ≤12 free, Fun Pals program','https://www.alexandraresort.com/'),
+   o('premium','Beaches Turks & Caicos',18000,'$12,000–24,000',1,1,'Unmatched kids+tween+teen clubs, water park, full AI','https://www.beaches.com/resorts/turks-caicos/'),
+   o('villa','Beach Enclave villa cluster',42000,'$35,000–50,000',0,0,'Priciest option surveyed — luxury villas, not savings','https://www.beachenclave.com/'),
+   o('adults','Club Med Turkoise',5100,'$4,700–5,500/couple',0,0,'Adults-only AI with standout watersports','https://www.clubmed.us/r/turkoise/y',1)]},
+ {id:'costa rica',name:'Costa Rica · Guanacaste',air:'Seasonal nonstop LIR ~$350–650',nonstop:0,safe:'Level 2',storm:1,water:'Pacific beaches (no hurricanes)',opts:[
+   o('budget','Tamarindo Diria Beach Resort',4000,'$3,300–4,800 all-in',0,0,'Beachfront in walkable Tamarindo (not AI, no club)','https://www.tamarindodiria.com/'),
+   o('value','Hotel Riu Guanacaste',4400,'$3,500–5,300 (AI)',1,0,'All-inclusive, kids club 4–12, water park','https://www.riu.com/en/hotel/costa-rica/guanacaste/hotel-riu-guanacaste/'),
+   o('premium','Four Seasons Papagayo',19500,'$18,000–21,000',1,1,'Top-shelf; Kids club + Tuanis Teen Centre (Andaz ~$9k is the value luxe)','https://www.fourseasons.com/costarica/'),
+   o('villa','Villa Morabeza / Royal Estates',5800,'$5,300–6,300/family',0,0,'8BR villa (or dual cluster = exact 23 fit), chef — best group value','https://www.villasofdistinction.com/'),
+   o('adults','Nekajui, Ritz-Carlton Reserve',29000,'$27,000–32,000',0,0,'Newest eco-luxe (El Mangroove/Occidental are calmer alts)','https://www.ritzcarlton.com/en/hotels/nekajui-costa-rica/',1)]},
+ {id:'cruise',name:'Cruise · from Florida (no flights)',air:'None — drive to the port',nonstop:1,safe:'—',storm:1,water:'Multi-island + private cays',opts:[
+   o('value','Royal Caribbean Grandeur (Tampa)',3700,'$3,700 int → $5,000 balcony',1,1,'Sails from your home port; Adventure Ocean kids + teen club','https://www.royalcaribbean.com/'),
+   o('value','Norwegian Epic/Aqua (Port Canaveral)',3900,'$3,900 int → $5,400 balcony',1,1,'Bigger ship; Splash Academy + Entourage teen; ~2h drive','https://www.ncl.com/'),
+   o('premium','RCL Bahamas + Perfect Day CocoCay',5200,'$4,700–6,200 balcony',1,1,'Newer ship, private-island water park (Thrill Waterpark)','https://www.royalcaribbean.com/cococay-cruises')]}
+];
+
+// ---- state ----
+var S={season:'spring',style:'all',budget:99999,family:1,mh:{kids:0,teen:0,nonstop:0,storm:0}};
+var pins=[]; // {di, oi}
+function money(n){return '$'+Math.round(n).toLocaleString();}
+function famPrice(op){ if(op.cpl) return op.p; return Math.round(op.p*S.family/50)*50; }
+
+function optPasses(op){
+  if(S.style==='resort' && !(op.t==='budget'||op.t==='value'||op.t==='premium')) return false;
+  if(S.style==='villa' && op.t!=='villa') return false;
+  if(S.style==='adults' && op.t!=='adults') return false;
+  if(S.mh.kids && !op.k) return false;
+  if(S.mh.teen && !op.tn) return false;
+  if(!op.cpl && famPrice(op) > S.budget) return false; // budget filter ignores per-couple adults options
+  return true;
+}
+function destPasses(d){
+  if(S.season==='summer' && !d.storm) return false;
+  if(S.mh.nonstop && !d.nonstop) return false;
+  if(S.mh.storm && !d.storm) return false;
+  return true;
+}
+
+var list=document.getElementById('list'), empty=document.getElementById('empty'), countEl=document.getElementById('count');
+function render(){
+  list.innerHTML=''; var shown=0, destShown=0;
+  // sort destinations by cheapest passing option
+  var order=DATA.map(function(d,i){return {d:d,i:i};}).filter(function(x){return destPasses(x.d);})
+    .map(function(x){var mins=x.d.opts.filter(optPasses).map(famPrice); x.min=mins.length?Math.min.apply(null,mins):1e9; x.any=mins.length>0; return x;})
+    .filter(function(x){return x.any;})
+    .sort(function(a,b){return a.min-b.min;});
+  order.forEach(function(x){
+    var d=x.d, di=x.i; destShown++;
+    var passing=d.opts.map(function(op,oi){return {op:op,oi:oi};}).filter(function(z){return optPasses(z.op);});
+    var prices=passing.filter(function(z){return !z.op.cpl;}).map(function(z){return famPrice(z.op);});
+    var lo=prices.length?Math.min.apply(null,prices):0, hi=prices.length?Math.max.apply(null,prices):0;
+    var el=document.createElement('div'); el.className='dest';
+    var stormBadge = d.storm?'<span class="badge good">Storm-safe summer</span>':'<span class="badge warn">Spring only</span>';
+    var nsBadge = d.nonstop?'<span class="badge good">Nonstop</span>':'<span class="badge">1 stop</span>';
+    el.innerHTML='<div class="dest-head"><svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      +'<div><div class="name">'+d.name+'</div><div class="dest-meta">'+nsBadge+stormBadge+'<span class="badge">'+d.safe+'</span><span class="badge">'+d.water+'</span></div></div>'
+      +'<div class="range"><span class="r num">'+(prices.length?money(lo)+(hi>lo?'–'+money(hi).replace('$',''):''):'—')+'</span><small>'+passing.length+' option'+(passing.length===1?'':'s')+'</small></div></div>'
+      +'<div class="dest-note">Fly: '+d.air+'</div>'
+      +'<div class="opts"></div>';
+    var optsWrap=el.querySelector('.opts');
+    passing.forEach(function(z){
+      shown++; var op=z.op, oi=z.oi;
+      var tags=''; if(op.k)tags+='<span class="tag">Kids club</span>'; if(op.tn)tags+='<span class="tag">Teen club</span>'; if(op.t==='adults')tags+='<span class="tag adult">Adults only</span>'; if(op.t==='villa')tags+='<span class="tag">Whole group</span>';
+      var pinned=pins.some(function(p){return p.di===di&&p.oi===oi;});
+      var priceTxt = op.cpl ? op.pr : money(famPrice(op));
+      var priceSub = op.cpl ? 'per couple' : (S.family!==1?'your family est.':'per family');
+      var oe=document.createElement('div'); oe.className='opt';
+      oe.innerHTML='<span class="tier t-'+op.t+'">'+op.t+'</span>'
+        +'<div class="mid"><h4>'+op.n+'</h4><div class="who">'+op.who+'</div><div class="tags">'+tags+'</div></div>'
+        +'<div class="right"><div class="price">'+priceTxt+'<small>'+priceSub+'</small></div><div class="acts"><button class="mini pin'+(pinned?' pinned':'')+'">'+(pinned?'✓ Pinned':'+ Pin')+'</button><a class="mini link" href="'+op.u+'" target="_blank" rel="noopener">View</a></div></div>';
+      oe.querySelector('.pin').addEventListener('click',function(e){e.stopPropagation();togglePin(di,oi);});
+      optsWrap.appendChild(oe);
+    });
+    el.querySelector('.dest-head').addEventListener('click',function(){el.classList.toggle('open');});
+    if(destShown<=2) el.classList.add('open'); // auto-open top 2
+    list.appendChild(el);
   });
+  countEl.textContent=shown+' option'+(shown===1?'':'s')+' · '+destShown+' place'+(destShown===1?'':'s');
+  empty.style.display = shown===0?'block':'none';
+}
 
-  /* reveal + count-up + bars */
-  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-  function countUp(el){
-    var target=+el.getAttribute('data-count'), pre=el.getAttribute('data-prefix')||'';
-    if(rm){el.textContent=pre+fmt(target);return;}
-    var start=null,dur=1400;
-    function step(ts){
-      if(!start)start=ts; var p=Math.min((ts-start)/dur,1);
-      var e=1-Math.pow(1-p,3);
-      el.textContent=pre+fmt(Math.round(target*e));
-      if(p<1)requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(!en.isIntersecting)return;
-      var el=en.target;
-      el.classList.add('in');
-      el.querySelectorAll('[data-count]').forEach(function(c){if(!c._done){c._done=1;countUp(c);}});
-      el.querySelectorAll('.fill').forEach(function(f){if(!f._done){f._done=1;f.style.width=(rm?f.getAttribute('data-pct'):f.getAttribute('data-pct'))+'%';}});
-      if(el.hasAttribute('data-count')&&!el._done){el._done=1;countUp(el);}
-      io.unobserve(el);
-    });
-  },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal,[data-count]').forEach(function(el){io.observe(el);});
+function togglePin(di,oi){
+  var idx=pins.findIndex(function(p){return p.di===di&&p.oi===oi;});
+  if(idx>-1)pins.splice(idx,1); else if(pins.length<6)pins.push({di:di,oi:oi});
+  render(); renderPins();
+}
+var tray=document.getElementById('tray'), fab=document.getElementById('fab'), cmp=document.getElementById('cmp');
+function renderPins(){
+  fab.classList.toggle('show',pins.length>0);
+  fab.textContent='Compare shortlist ('+pins.length+')';
+  cmp.innerHTML='';
+  pins.forEach(function(p){
+    var d=DATA[p.di], op=d.opts[p.oi];
+    var c=document.createElement('div'); c.className='cmp-card';
+    var pr= op.cpl?op.pr:money(famPrice(op));
+    c.innerHTML='<div class="cn">'+op.n+'</div><div class="cd">'+d.name+' · '+op.t+'</div><div class="cp">'+pr+'</div>'
+      +'<ul><li>'+ (op.k?'✓':'✗') +' kids club &nbsp; '+(op.tn?'✓':'✗')+' teen club</li><li>Fly: '+d.air+'</li><li>'+(d.storm?'Storm-safe summer':'Spring only')+' · '+d.safe+'</li></ul>'
+      +'<button class="rm">Remove</button>';
+    c.querySelector('.rm').addEventListener('click',function(){togglePin(p.di,p.oi);});
+    cmp.appendChild(c);
+  });
+  if(pins.length===0)tray.classList.remove('show');
+}
+fab.addEventListener('click',function(){tray.classList.add('show');});
+document.getElementById('closeTray').addEventListener('click',function(){tray.classList.remove('show');});
+document.getElementById('clearPins').addEventListener('click',function(){pins=[];render();renderPins();});
 
-  /* location pull-down filter */
-  (function(){
-    var LOCKW={
-      'bahamas':['bahamas','nassau','exuma','baha mar'],
-      'puerto rico':['puerto rico','san juan','culebra','vieques','fajardo','rio grande','rio mar'],
-      'dominican republic':['dominican republic',' dr','punta cana','cap cana'],
-      'mexico':['mexico','riviera maya','cancún','cancun','playa del carmen','puerto aventuras','soliman bay'],
-      'costa rica':['costa rica','guanacaste','tamarindo'],
-      'aruba':['aruba','palm beach'],
-      'curacao':['curaçao','curacao'],
-      'grand cayman':['cayman'],
-      'turks':['turks','caicos','providenciales','grace bay'],
-      'antigua':['antigua'],
-      'bonaire':['bonaire'],
-      'el salvador':['el salvador','el zonte'],
-      'jamaica':['jamaica','negril','montego','ocho rios'],
-      'barbados':['barbados','hastings','bridgetown'],
-      'st lucia':['lucia','vieux fort'],
-      'st maarten':['maarten','st. martin','maho'],
-      'anguilla':['anguilla','rendezvous','shoal bay'],
-      'st kitts':['kitts','nevis','frigate'],
-      'grenada':['grenada','grand anse'],
-      'st vincent':['vincent','grenadines','bequia'],
-      'dominica':['dominica','roseau'],
-      'bvi':['bvi','tortola','virgin gorda','british virgin'],
-      'martinique':['martinique'],
-      'guadeloupe':['guadeloupe'],
-      'tobago':['tobago'],
-      'cruise':['tampa','port canaveral','sails from']
-    };
-    var sel=document.getElementById('locFilter'); if(!sel)return;
-    var fc=document.getElementById('fcount');
-    function finalize(){
-      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
-      document.querySelectorAll('[data-count]').forEach(function(c){if(!c._done){c._done=1;c.textContent=(c.getAttribute('data-prefix')||'')+fmt(+c.getAttribute('data-count'));}});
-      document.querySelectorAll('.fill').forEach(function(f){if(!f._done){f._done=1;f.style.width=f.getAttribute('data-pct')+'%';}});
-    }
-    sel.addEventListener('change',function(){
-      var kws=LOCKW[sel.value];
-      if(!kws){ document.querySelectorAll('.hide').forEach(function(e){e.classList.remove('hide');}); fc.textContent=''; return; }
-      finalize();
-      var shown=0;
-      document.querySelectorAll('.card').forEach(function(c){
-        var el=c.querySelector('.loc'), loc=(el?el.textContent:'').toLowerCase();
-        var m=kws.some(function(k){return loc.indexOf(k)>-1;});
-        c.classList.toggle('hide',!m); if(m)shown++;
-      });
-      document.querySelectorAll('.grid').forEach(function(g){ g.classList.toggle('hide',g.querySelectorAll('.card:not(.hide)').length===0); });
-      document.querySelectorAll('section').forEach(function(s){
-        if(!s.querySelector('.card')){ s.classList.add('hide'); return; }
-        s.classList.toggle('hide',s.querySelectorAll('.card:not(.hide)').length===0);
-      });
-      fc.textContent=shown+' option'+(shown===1?'':'s');
-      window.scrollTo({top:0,behavior:rm?'auto':'smooth'});
-    });
-  })();
+// controls
+document.getElementById('fSeason').addEventListener('change',function(){S.season=this.value;render();});
+document.getElementById('fStyle').addEventListener('change',function(){S.style=this.value;render();});
+document.getElementById('fBudget').addEventListener('change',function(){S.budget=+this.value;render();});
+document.getElementById('fFamily').addEventListener('change',function(){S.family=+this.value;render();renderPins();});
+document.querySelectorAll('.chip-btn').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-mh');S.mh[k]=!S.mh[k];b.setAttribute('aria-pressed',S.mh[k]?'true':'false');render();});});
+document.getElementById('reset').addEventListener('click',function(){S={season:'spring',style:'all',budget:99999,family:1,mh:{kids:0,teen:0,nonstop:0,storm:0}};document.getElementById('fSeason').value='spring';document.getElementById('fStyle').value='all';document.getElementById('fBudget').value='99999';document.getElementById('fFamily').value='1';document.querySelectorAll('.chip-btn').forEach(function(b){b.setAttribute('aria-pressed','false');});render();});
 
-  /* family cost pull-down — scales per-family prices by household size */
-  (function(){
-    var fam=document.getElementById('famFilter'); if(!fam)return;
-    var note=document.getElementById('famnote');
-    fam.addEventListener('change',function(){
-      var f=parseFloat(fam.value)||1, name=fam.options[fam.selectedIndex].text.split('—')[0].trim();
-      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
-      document.querySelectorAll('[data-count]').forEach(function(c){c._done=1;c.textContent=(c.getAttribute('data-prefix')||'')+fmt(+c.getAttribute('data-count'));});
-      document.querySelectorAll('.fill').forEach(function(fl){if(!fl._done){fl._done=1;fl.style.width=fl.getAttribute('data-pct')+'%';}});
-      if(f!==1){
-        document.querySelectorAll('.card .price').forEach(function(p){
-          var val=p.querySelector('.val[data-count]'), unit=p.querySelector('.unit');
-          if(!val||!unit||unit.textContent.toLowerCase().indexOf('family')===-1)return;
-          val.textContent=(val.getAttribute('data-prefix')||'')+fmt(Math.round((+val.getAttribute('data-count'))*f/50)*50);
-        });
-      }
-      if(note) note.textContent = f===1 ? '' : name+': size-scaled est. (villas vary)';
-    });
-  })();
-
-  /* hero canvas — layered sea shimmer + sun */
-  var cv=document.getElementById('sea');
-  if(cv){
-    var ctx=cv.getContext('2d'),W,H,t=0;
-    function size(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;}
-    size();window.addEventListener('resize',size);
-    function draw(){
-      ctx.clearRect(0,0,W,H);
-      var g=ctx.createLinearGradient(0,0,0,H);
-      g.addColorStop(0,'#0a3a44');g.addColorStop(.45,'#0d515a');g.addColorStop(.72,'#12707a');g.addColorStop(1,'#1c8f92');
-      ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-      /* sun */
-      var sx=W*0.78, sy=H*0.30, r=H*0.14;
-      var sg=ctx.createRadialGradient(sx,sy,0,sx,sy,r*2.4);
-      sg.addColorStop(0,'rgba(255,236,180,.9)');sg.addColorStop(.4,'rgba(255,205,130,.35)');sg.addColorStop(1,'rgba(255,205,130,0)');
-      ctx.fillStyle=sg;ctx.beginPath();ctx.arc(sx,sy,r*2.4,0,7);ctx.fill();
-      ctx.fillStyle='rgba(255,240,200,.95)';ctx.beginPath();ctx.arc(sx,sy,r,0,7);ctx.fill();
-      /* shimmer bands */
-      for(var i=0;i<7;i++){
-        var yy=H*0.5 + i*(H*0.07);
-        ctx.beginPath();
-        ctx.moveTo(0,yy);
-        for(var x=0;x<=W;x+=24){
-          var amp=(2+i*1.6)*devicePixelRatio;
-          var y=yy+Math.sin((x*0.008)+(t*0.02)+(i*0.7))*amp;
-          ctx.lineTo(x,y);
-        }
-        ctx.strokeStyle='rgba(255,255,255,'+(0.05+i*0.012)+')';
-        ctx.lineWidth=1.2*devicePixelRatio;ctx.stroke();
-      }
-      t+=1;
-      if(!rm)requestAnimationFrame(draw);
-    }
-    draw();
-  }
+render(); renderPins();
 })();
 </script>
 </body></html>
