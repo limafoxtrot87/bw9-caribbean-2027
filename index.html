@@ -232,6 +232,7 @@
   <div class="nav-in">
     <div class="brand">Blue Water <span>Nine</span></div>
     <div class="nav-links">
+      <a href="#start">Start Here</a>
       <a href="#verdict">The Verdict</a>
       <a href="#group">Who's Going</a>
       <a href="#adults">Adults Only</a>
@@ -281,11 +282,52 @@
       <option value="antigua">Antigua</option>
       <option value="bonaire">Bonaire</option>
       <option value="el salvador">El Salvador</option>
+      <option value="jamaica">Jamaica</option>
+      <option value="barbados">Barbados</option>
+      <option value="st lucia">St. Lucia</option>
+      <option value="st maarten">St. Maarten</option>
+      <option value="anguilla">Anguilla</option>
+      <option value="st kitts">St. Kitts &amp; Nevis</option>
+      <option value="grenada">Grenada</option>
+      <option value="st vincent">St. Vincent</option>
+      <option value="dominica">Dominica</option>
+      <option value="bvi">British Virgin Islands</option>
+      <option value="martinique">Martinique</option>
+      <option value="guadeloupe">Guadeloupe</option>
+      <option value="tobago">Tobago</option>
       <option value="cruise">Cruise (from Florida)</option>
     </select>
+    <label for="famFilter">My family</label>
+    <select id="famFilter" aria-label="Show estimated cost for a specific family">
+      <option value="1">Whole group (fam of 4)</option>
+      <option value="1.33">Bartel — 5 travelers</option>
+      <option value="1.83">Donaldson — 7 travelers</option>
+      <option value="1">Dijoia — 4 travelers</option>
+      <option value="0.67">Bonfanti — 3 travelers</option>
+      <option value="1">Chavis — 4 travelers</option>
+    </select>
+    <span id="famnote" style="font-family:var(--mono);font-size:.72rem;color:var(--teal-ink)"></span>
     <span class="fcount" id="fcount"></span>
   </div>
 </div>
+
+<!-- START HERE -->
+<section id="start">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-no">START HERE</span>
+      <h2>Four ways to do this — in plain English.</h2>
+      <p>Pick the <em>style</em> of trip first; the destination comes second. Here's what each approach means and roughly what a family pays. (All per family, 7 nights.)</p>
+    </div>
+    <div class="vgrid" style="--paper:var(--paper)">
+      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Simplest &amp; cheapest together</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Take a cruise</h4><p style="font-size:.92rem;color:var(--ink-2)">One ship out of Tampa — <strong>no flights</strong>, everyone together, kids' &amp; teen clubs on board. You drive to the port. Short port stops, not deep island time.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="3700" data-prefix="$">$0</span><span class="unit">/family &amp; up</span></div></div>
+      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Easiest once you land</div><h4 style="font-size:1.25rem;margin:6px 0 8px">All-inclusive resort</h4><p style="font-size:.92rem;color:var(--ink-2)">One hotel; food, drinks, and kids' clubs included. You fly there. Zero planning on-site — just show up. Mid-price, and a few budget islands run cheaper.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="4000" data-prefix="$">$0</span><span class="unit">/family (to ~$11k)</span></div></div>
+      <div class="mbox reveal"><div class="eyebrow" style="color:var(--coral)">Best value if you'll DIY</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Split a villa</h4><p style="font-size:.92rem;color:var(--ink-2)">Rent big houses together and split the cost — nicest place per dollar. But you handle groceries/a chef and rental cars, and you add flights on top.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="1700" data-prefix="$">$0</span><span class="unit">/family lodging + flights</span></div></div>
+      <div class="mbox reveal"><div class="eyebrow" style="color:var(--teal-ink)">Best of both</div><h4 style="font-size:1.25rem;margin:6px 0 8px">Do two trips</h4><p style="font-size:.92rem;color:var(--ink-2)">Parents take a spring getaway; everyone does a summer villa week. Two vacations for about the price of one big group trip.</p><div class="price" style="margin-top:12px"><span class="val num" data-count="5900" data-prefix="$">$0</span><span class="unit">/family · both trips</span></div></div>
+    </div>
+    <div class="callout reveal" style="margin-top:34px;margin-bottom:0"><strong>What moves the price, in three lines:</strong> (1) <strong>Airfare is per person</strong> — so bigger families pay more (use the "My family" pull-down above to see your number). (2) <strong>How fancy the lodging is</strong> — value AI vs. luxury villa can be 3× apart. (3) <strong>Kids-free deals</strong> — only some resorts, usually under age 12–17, and usually <em>not</em> over spring break. · <strong>Closer &amp; cheaper to reach:</strong> Bahamas, Puerto Rico, Cancún, Jamaica. <strong>Farther &amp; pricier:</strong> Turks, Anguilla, Cayman, the French islands.</div>
+  </div>
+</section>
 
 <!-- VERDICT -->
 <section class="verdict" id="verdict">
@@ -686,7 +728,7 @@
         <div class="card-body">
           <h3>Baha Mar</h3>
           <div class="price"><span class="val num" data-count="8000" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
-          <ul class="facts"><li><strong>Baha Bay water park + kids clubs included</strong> — Grand Hyatt (families), Rosewood (the adults' quiet-luxury zone)</li><li>One campus keeps 5 families together, split by vibe</li><li>Nonstop Breeze TPA→Nassau (Thu/Sun, ~1h25) · March = zero hurricane risk</li><li>The famous glass-clear water (pigs, sandbars, grotto) is a short Exuma hop</li></ul>
+          <ul class="facts"><li><strong>Baha Bay water park + kids clubs included</strong> — Grand Hyatt (families), Rosewood (the adults' quiet-luxury zone)</li><li>One campus keeps 5 families together, split by vibe</li><li><strong>Fly:</strong> nonstop Breeze TPA→Nassau ~$280–400 rt (Thu/Sun) · March = zero hurricane risk</li><li>The famous glass-clear water (pigs, sandbars, grotto) is a short Exuma hop</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Why</span> Water parks + kids clubs on-site, closest clear water to Tampa, one resort for the whole group.</div><div class="rev gripe"><span class="lead">Alt</span> Atlantis (bigger single water park, pricier fees + 25% dining surcharge); or an <strong>Exuma villa cluster</strong> if the turquoise water <em>is</em> the trip.</div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.bahamar.com/" target="_blank" rel="noopener">Baha Mar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="https://www.atlantisbahamas.com/" target="_blank" rel="noopener">Atlantis</a></div>
         </div>
@@ -708,7 +750,7 @@
         <div class="card-body">
           <h3>Sunscape Curaçao</h3>
           <div class="price"><span class="val num" data-count="3150" data-prefix="$">$0</span><span class="unit">/family · all-inclusive</span></div>
-          <ul class="facts"><li><strong>Below the hurricane belt</strong> — genuinely storm-safe all summer (like Aruba, ~20–30% cheaper)</li><li>Kids club <strong>and</strong> teen club, all-inclusive</li><li>Protected marine-park reef, 65–100 ft visibility year-round</li><li>No nonstop — connect via Miami</li></ul>
+          <ul class="facts"><li><strong>Below the hurricane belt</strong> — genuinely storm-safe all summer (like Aruba, ~20–30% cheaper)</li><li>Kids club <strong>and</strong> teen club, all-inclusive</li><li>Protected marine-park reef, 65–100 ft visibility year-round</li><li><strong>Fly:</strong> no nonstop — via Miami, ~$550–750 rt</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Why</span> The clear-water summer winner: Aruba-clear water, out of the storm zone, a real family+teen AI, and cheaper than Aruba.</div><div class="rev gripe"><span class="lead">Alt</span> Coral Estate villa cluster (~$1,800–3,600/family) for a villa split.</div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.hyatt.com/en-US/hotel/curacao/sunscape-curacao-resort-spa/sucur" target="_blank" rel="noopener">Sunscape<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -730,7 +772,7 @@
         <div class="card-body">
           <h3>Beaches Turks &amp; Caicos</h3>
           <div class="price"><span class="val num" data-count="15000" data-prefix="$">$0</span><span class="unit">/family · peak (est.)</span></div>
-          <ul class="facts"><li>Grace Bay — a repeat "World's Best Beach," 100+ ft visibility</li><li>All-inclusive with age-segmented kids camps + nurseries</li><li>~1 stop via Miami · Level 2 · in the belt (spring safe)</li><li>Summer off-season roughly halves the price</li></ul>
+          <ul class="facts"><li>Grace Bay — a repeat "World's Best Beach," 100+ ft visibility</li><li>All-inclusive with age-segmented kids camps + nurseries</li><li><strong>Fly:</strong> ~1 stop via Miami, ~$400–700 rt · Level 2 · in the belt (spring safe)</li><li>Summer off-season roughly halves the price</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Why</span> Best beach + strongest single all-inclusive kids-club resort of the set.</div><div class="rev gripe"><span class="lead">Note</span> The costliest by far — no budget competition to Beaches; villas run into six figures for the group.</div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.beaches.com/resorts/turks-caicos/" target="_blank" rel="noopener">Beaches T&amp;C<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
@@ -741,13 +783,53 @@
         <div class="card-body">
           <h3>Plaza Beach / Sand Dollar</h3>
           <div class="price"><span class="val num" data-count="2200" data-prefix="$">$0</span><span class="unit">/unit · room-only</span></div>
-          <ul class="facts"><li>Arguably the <strong>best water</strong> of all — the whole coast is a marine park</li><li>Below the belt — storm-safe summer, like the other ABC islands</li><li>Thin family infrastructure; infrequent connecting flights via Miami</li></ul>
+          <ul class="facts"><li>Arguably the <strong>best water</strong> of all — the whole coast is a marine park</li><li>Below the belt — storm-safe summer, like the other ABC islands</li><li><strong>Fly:</strong> infrequent, via Miami ~$576–1,069 rt; thin family infrastructure</li></ul>
           <div class="reviews"><div class="rev love"><span class="lead">Why</span> Elite snorkeling/diving water, Level-1 safe, storm-free in summer.</div><div class="rev gripe"><span class="lead">Note</span> A dive island — weak fit for 12 kids and the priciest per-head logistics. Only if the group is really about the water itself.</div></div>
           <div class="card-cta"><a class="btn primary" href="https://www.plazaresortbonaire.com/en/valk-kids" target="_blank" rel="noopener">Plaza Bonaire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         </div>
       </article>
     </div>
     <p style="margin-top:24px;font-size:.9rem;color:var(--ink-2)"><strong>Rule of thumb:</strong> spring break → <strong>Puerto Rico</strong> (cheapest, no passport) or the <strong>Bahamas</strong> (water parks); summer → <strong>Curaçao</strong> (storm-safe, Aruba-clear, cheaper). Grand Cayman is the premium nonstop, Turks &amp; Caicos the splurge, Bonaire only for divers. ⚠️ Note: Sandals Emerald Bay (Exuma) is <strong>closed</strong> and rebuilding as a family resort — not available for 2027.</p>
+  </div>
+</section>
+
+<!-- EVERY SAFE ISLAND -->
+<section id="islands">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-no">THE FULL SET</span>
+      <h2>Every other safe island.</h2>
+      <p class="dropcap">The complete safe-Caribbean lineup, each with a Tampa airfare estimate. We've left out <strong>Haiti</strong> (Level 4 "Do Not Travel") and <strong>Trinidad's mainland</strong> (Level 3); <strong>Jamaica</strong> and <strong>St. Lucia</strong> carry Level 2 crime advisories, flagged below. Use the <strong>destination pull-down</strong> at the top to jump to any single island.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip value">Only nonstop AI</span><span class="loc">Negril · Jamaica</span></div><div class="card-body"><h3>Beaches Negril</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> nonstop Breeze TPA→Montego Bay ~$250–450 rt</li><li><strong>Safety:</strong> Level 2 (crime; resort zones fine) · in the belt</li><li>Seven Mile Beach; the most turnkey big-family AI</li></ul><div class="card-cta"><a class="btn primary" href="https://www.beaches.com/resorts/negril/" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Cheapest + safest</span><span class="loc">Hastings · Barbados</span></div><div class="card-body"><h3>Sugar Bay Barbados</h3><div class="price"><span class="val num" data-count="1800" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$400–700 rt</li><li><strong>Safety:</strong> Level 1 · largely outside the belt (lowest risk)</li><li>Kids stay free; calm west-coast turquoise water</li></ul><div class="card-cta"><a class="btn primary" href="https://www.sugarbaybarbados.com/families" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Pitons + water park</span><span class="loc">Vieux Fort · St. Lucia</span></div><div class="card-body"><h3>Coconut Bay</h3><div class="price"><span class="val num" data-count="3500" data-prefix="$">$0</span><span class="unit">/family · with promo</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Charlotte/Miami ~$550–750 rt</li><li><strong>Safety:</strong> Level 2 (crime) · in the belt</li><li>On-site water park + kids club; calm Piton-side beaches</li></ul><div class="card-cta"><a class="btn primary" href="https://cbayresort.com/splash/cocoland/cocoland-kidz-klub" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Villa play</span><span class="loc">Maho · St. Maarten</span></div><div class="card-body"><h3>Sonesta Maho / villas</h3><div class="price"><span class="val num" data-count="3800" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/FLL ~$450–650 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Irma 2017)</li><li>Villas sleep 20+; famous Maho jet-spotting beach</li></ul><div class="card-cta"><a class="btn primary" href="https://sonestastmaarten.com/mahobeach/" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip deluxe">World-class beaches</span><span class="loc">Rendezvous Bay · Anguilla</span></div><div class="card-body"><h3>Aurora / private villas</h3><div class="price"><span class="val num" data-count="3500" data-prefix="$">$0</span><span class="unit">/family · from (villa share)</span></div><ul class="facts"><li><strong>Fly:</strong> TPA→SXM + ferry hop ~$400–750 rt all-in</li><li><strong>Safety:</strong> Level 1 · in the belt</li><li>Shoal Bay East = #6 beach on Earth; the splurge</li></ul><div class="card-cta"><a class="btn primary" href="https://www.wimco.com/villa-rentals/caribbean/anguilla" target="_blank" rel="noopener">View villas</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Suites w/ kitchens</span><span class="loc">Frigate Bay · St. Kitts &amp; Nevis</span></div><div class="card-body"><h3>Marriott St. Kitts Beach Club</h3><div class="price"><span class="val num" data-count="3600" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/Charlotte ~$536–900 rt</li><li><strong>Safety:</strong> Level 1 · in the belt</li><li>Villa-style suites w/ kitchens; calm Cockleshell Beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.marriott.com/en-us/hotels/skbmc-marriotts-st-kitts-beach-club/overview/" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Turnkey AI · lower risk</span><span class="loc">Grand Anse · Grenada</span></div><div class="card-body"><h3>Royalton Grenada</h3><div class="price"><span class="val num" data-count="5000" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$636 rt</li><li><strong>Safety:</strong> Level 2 · southern edge of belt (lower risk)</li><li>Kids club + splash park; 2-mi Grand Anse Beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.royaltonresorts.com/resorts/grenada" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Turtle snorkeling</span><span class="loc">Bequia · St. Vincent &amp; Grenadines</span></div><div class="card-body"><h3>Bequia Beach Hotel</h3><div class="price"><span class="val num" data-count="5600" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/San Juan ~$500–600 rt</li><li><strong>Safety:</strong> Level 1 · southern edge of belt</li><li>Free kids club; Tobago Cays sea-turtle snorkeling</li></ul><div class="card-cta"><a class="btn primary" href="https://bequiabeachhotel.com/accommodation" target="_blank" rel="noopener">View hotel</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Cheapest lodging · nature</span><span class="loc">Roseau · Dominica</span></div><div class="card-body"><h3>Fort Young Hotel</h3><div class="price"><span class="val num" data-count="1400" data-prefix="$">$0</span><span class="unit">/family · from (room-only)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami/San Juan ~$536–756 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Maria 2017)</li><li>Rainforest/rivers/diving — few classic beaches</li></ul><div class="card-cta"><a class="btn primary" href="https://www.fortyounghotel.com/en/" target="_blank" rel="noopener">View hotel</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E7C7B,#0C4E63)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip nice">Best water · sailing</span><span class="loc">Tortola · BVI (not USVI)</span></div><div class="card-body"><h3>BVI villas / Scrub Island</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami or San Juan ~$592–900 rt</li><li><strong>Safety:</strong> Level 1 · in the belt (Irma 2017)</li><li>The Baths &amp; world-class snorkeling; villa-driven, small connector planes</li></ul><div class="card-cta"><a class="btn primary" href="https://www.scrubisland.com/" target="_blank" rel="noopener">View options</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C6E5E,#0A4A54)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip value">Villa better than resort</span><span class="loc">Sainte-Anne · Martinique</span></div><div class="card-body"><h3>Villa cluster (French)</h3><div class="price"><span class="val num" data-count="2800" data-prefix="$">$0</span><span class="unit">/family · lodging</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$650–750 rt</li><li><strong>Safety:</strong> Level 1 (French W. Indies) · in the belt</li><li>⚠ Club Med here has <em>no</em> kids club — go villa; Les Salines beach</li></ul><div class="card-cta"><a class="btn primary" href="https://www.clubmed.us/r/buccaneer-s-creek/y" target="_blank" rel="noopener">View options</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip deluxe">Best French kids clubs</span><span class="loc">Sainte-Anne · Guadeloupe</span></div><div class="card-body"><h3>Club Med La Caravelle</h3><div class="price"><span class="val num" data-count="8000" data-prefix="$">$0</span><span class="unit">/family · from (AI)</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Miami ~$550–650 rt</li><li><strong>Safety:</strong> Level 1 (French W. Indies) · in the belt</li><li>Full kids (4–10) + junior/teen (11–17) clubs — strongest turnkey French fit</li></ul><div class="card-cta"><a class="btn primary" href="https://www.clubmed.us/r/caravelle/y" target="_blank" rel="noopener">View resort</a></div></div></article>
+
+      <article class="card reveal"><div class="card-band" style="background:linear-gradient(135deg,#0C8896,#0A4E5A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.14)"/></svg><span class="chip cheap">Storm-safe · reef</span><span class="loc">Lowlands · Tobago</span></div><div class="card-body"><h3>Magdalena Grand</h3><div class="price"><span class="val num" data-count="4500" data-prefix="$">$0</span><span class="unit">/family · from</span></div><ul class="facts"><li><strong>Fly:</strong> no nonstop — via Trinidad ~$450–750 rt</li><li><strong>Safety:</strong> Tobago is safer than T&amp;T's Level 3 label · <strong>below the belt</strong> (summer-safe)</li><li>Buccoo Reef + Nylon Pool; calm Pigeon Point</li></ul><div class="card-cta"><a class="btn primary" href="https://www.magdalenagrand.com/" target="_blank" rel="noopener">View resort</a></div></div></article>
+    </div>
+    <p style="margin-top:22px;font-size:.86rem;color:var(--ink-2)">Every price is a 2026-rate estimate, per family of four, 7 nights. <strong>Airfare shown is round-trip per person from Tampa</strong> — remember it multiplies by household size (use the "My family" pull-down). Hurricane note: only the ABC islands, Grenada, St. Vincent (edge) and Tobago sit safely below the belt for a summer trip; everything else is spring-break-safe but a summer gamble.</p>
   </div>
 </section>
 
@@ -893,6 +975,19 @@
       'antigua':['antigua'],
       'bonaire':['bonaire'],
       'el salvador':['el salvador','el zonte'],
+      'jamaica':['jamaica','negril','montego','ocho rios'],
+      'barbados':['barbados','hastings','bridgetown'],
+      'st lucia':['lucia','vieux fort'],
+      'st maarten':['maarten','st. martin','maho'],
+      'anguilla':['anguilla','rendezvous','shoal bay'],
+      'st kitts':['kitts','nevis','frigate'],
+      'grenada':['grenada','grand anse'],
+      'st vincent':['vincent','grenadines','bequia'],
+      'dominica':['dominica','roseau'],
+      'bvi':['bvi','tortola','virgin gorda','british virgin'],
+      'martinique':['martinique'],
+      'guadeloupe':['guadeloupe'],
+      'tobago':['tobago'],
       'cruise':['tampa','port canaveral','sails from']
     };
     var sel=document.getElementById('locFilter'); if(!sel)return;
@@ -919,6 +1014,26 @@
       });
       fc.textContent=shown+' option'+(shown===1?'':'s');
       window.scrollTo({top:0,behavior:rm?'auto':'smooth'});
+    });
+  })();
+
+  /* family cost pull-down — scales per-family prices by household size */
+  (function(){
+    var fam=document.getElementById('famFilter'); if(!fam)return;
+    var note=document.getElementById('famnote');
+    fam.addEventListener('change',function(){
+      var f=parseFloat(fam.value)||1, name=fam.options[fam.selectedIndex].text.split('—')[0].trim();
+      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
+      document.querySelectorAll('[data-count]').forEach(function(c){c._done=1;c.textContent=(c.getAttribute('data-prefix')||'')+fmt(+c.getAttribute('data-count'));});
+      document.querySelectorAll('.fill').forEach(function(fl){if(!fl._done){fl._done=1;fl.style.width=fl.getAttribute('data-pct')+'%';}});
+      if(f!==1){
+        document.querySelectorAll('.card .price').forEach(function(p){
+          var val=p.querySelector('.val[data-count]'), unit=p.querySelector('.unit');
+          if(!val||!unit||unit.textContent.toLowerCase().indexOf('family')===-1)return;
+          val.textContent=(val.getAttribute('data-prefix')||'')+fmt(Math.round((+val.getAttribute('data-count'))*f/50)*50);
+        });
+      }
+      if(note) note.textContent = f===1 ? '' : name+': size-scaled est. (villas vary)';
     });
   })();
 
