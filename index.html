@@ -86,6 +86,13 @@
   .sec-head p{color:var(--ink-2);font-size:1.06rem}
   .callout{background:color-mix(in srgb,var(--warn) 13%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 45%,var(--line));border-left:4px solid var(--warn);border-radius:6px;padding:16px 20px;margin-bottom:34px;font-size:.95rem;line-height:1.55;color:var(--ink)}
   .callout strong{color:var(--ink)}
+  .filterbar{position:sticky;top:59px;z-index:40;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .filterbar-in{max-width:var(--maxw);margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .filterbar label{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .filterbar select{font-family:var(--sans);font-size:.92rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:8px 16px;cursor:pointer}
+  .filterbar select:hover{border-color:var(--teal)}
+  .filterbar .fcount{font-family:var(--mono);font-size:.74rem;color:var(--teal-ink);margin-left:auto}
+  .hide{display:none!important}
   .chapter-no{font-family:var(--mono);font-size:.78rem;letter-spacing:.2em;color:var(--coral)}
   .dropcap::first-letter{font-family:var(--serif);float:left;font-size:3.4em;line-height:.72;padding:.06em .12em 0 0;color:var(--teal-ink);font-weight:600}
 
@@ -231,6 +238,7 @@
       <a href="#family">Whole Group</a>
       <a href="#twotrip">Two Trips</a>
       <a href="#cruise">Cruise</a>
+      <a href="#clearwater">Clear Water</a>
       <a href="#deals">Group Deals</a>
       <a href="#matrix">Compare</a>
     </div>
@@ -255,6 +263,29 @@
   </div>
   <div class="scrollcue">Scroll</div>
 </header>
+
+<div class="filterbar">
+  <div class="filterbar-in">
+    <label for="locFilter">Browse by destination</label>
+    <select id="locFilter" aria-label="Filter the page by destination">
+      <option value="all">All destinations</option>
+      <option value="bahamas">Bahamas</option>
+      <option value="puerto rico">Puerto Rico</option>
+      <option value="dominican republic">Dominican Republic</option>
+      <option value="mexico">Mexico</option>
+      <option value="costa rica">Costa Rica</option>
+      <option value="aruba">Aruba</option>
+      <option value="curacao">Curaçao</option>
+      <option value="grand cayman">Grand Cayman</option>
+      <option value="turks">Turks &amp; Caicos</option>
+      <option value="antigua">Antigua</option>
+      <option value="bonaire">Bonaire</option>
+      <option value="el salvador">El Salvador</option>
+      <option value="cruise">Cruise (from Florida)</option>
+    </select>
+    <span class="fcount" id="fcount"></span>
+  </div>
+</div>
 
 <!-- VERDICT -->
 <section class="verdict" id="verdict">
@@ -640,6 +671,86 @@
   </div>
 </section>
 
+<!-- CLEAR WATER -->
+<section id="clearwater">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter-no">CLEAR-WATER ADDITIONS</span>
+      <h2>The postcard-water tier.</h2>
+      <p class="dropcap">The places we first skipped while chasing all-inclusive value — the ones people picture when they say "turquoise." One rule sorts them: <em>hurricane season</em>. March is safe everywhere; for a summer trip, only the ABC islands sit safely below the belt. Prices are 2026-rate estimates, per family of four unless noted.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#0FA6C0,#0C5A7A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 72 200 88 T400 82 V120 H0Z" fill="rgba(255,255,255,.18)"/><path d="M0 100 Q100 86 200 100 T400 96 V120 H0Z" fill="rgba(255,255,255,.12)"/><circle cx="330" cy="36" r="18" fill="rgba(255,240,190,.5)"/></svg><span class="chip nice">Best clear-water fit</span><span class="loc">Nassau · Bahamas</span></div>
+        <div class="card-body">
+          <h3>Baha Mar</h3>
+          <div class="price"><span class="val num" data-count="8000" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
+          <ul class="facts"><li><strong>Baha Bay water park + kids clubs included</strong> — Grand Hyatt (families), Rosewood (the adults' quiet-luxury zone)</li><li>One campus keeps 5 families together, split by vibe</li><li>Nonstop Breeze TPA→Nassau (Thu/Sun, ~1h25) · March = zero hurricane risk</li><li>The famous glass-clear water (pigs, sandbars, grotto) is a short Exuma hop</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Water parks + kids clubs on-site, closest clear water to Tampa, one resort for the whole group.</div><div class="rev gripe"><span class="lead">Alt</span> Atlantis (bigger single water park, pricier fees + 25% dining surcharge); or an <strong>Exuma villa cluster</strong> if the turquoise water <em>is</em> the trip.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.bahamar.com/" target="_blank" rel="noopener">Baha Mar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="https://www.atlantisbahamas.com/" target="_blank" rel="noopener">Atlantis</a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#12A08C,#0C5A6A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 76 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="64" cy="34" r="17" fill="rgba(255,240,190,.5)"/></svg><span class="chip value">Spring-break value</span><span class="loc">Rio Grande · Puerto Rico</span></div>
+        <div class="card-body">
+          <h3>Wyndham Rio Mar / El Conquistador</h3>
+          <div class="price"><span class="val num" data-count="1750" data-prefix="$">$0</span><span class="unit">/family · from (room-only)</span></div>
+          <ul class="facts"><li><strong>No passport, US dollars</strong> — a real win for moving 23 people</li><li>Nonstop TPA→San Juan ~$250–450 — cheapest air of the whole set</li><li>Flamenco Beach + the glowing bio-bay · resort kids clubs</li><li>In the hurricane belt — spring-break safe, not a summer pick</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Cheapest + easiest logistics of the clear-water tier; base on the main island, ferry to Culebra/Vieques for the postcard water.</div><div class="rev gripe"><span class="lead">Note</span> Reaching Culebra/Vieques adds a ferry or short flight — the one friction point.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.wyndhamhotels.com/wyndham-grand/rio-grande-puerto-rico/wyndham-grand-rio-mar-rainforest-beach-and-golf-resort/overview" target="_blank" rel="noopener">Rio Mar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#0C8F86,#0A4E5C)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 88 Q100 100 200 84 T400 90 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="330" cy="38" r="16" fill="rgba(255,240,190,.45)"/></svg><span class="chip cheap">Summer storm-safe</span><span class="loc">Willemstad · Curaçao</span></div>
+        <div class="card-body">
+          <h3>Sunscape Curaçao</h3>
+          <div class="price"><span class="val num" data-count="3150" data-prefix="$">$0</span><span class="unit">/family · all-inclusive</span></div>
+          <ul class="facts"><li><strong>Below the hurricane belt</strong> — genuinely storm-safe all summer (like Aruba, ~20–30% cheaper)</li><li>Kids club <strong>and</strong> teen club, all-inclusive</li><li>Protected marine-park reef, 65–100 ft visibility year-round</li><li>No nonstop — connect via Miami</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> The clear-water summer winner: Aruba-clear water, out of the storm zone, a real family+teen AI, and cheaper than Aruba.</div><div class="rev gripe"><span class="lead">Alt</span> Coral Estate villa cluster (~$1,800–3,600/family) for a villa split.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.hyatt.com/en-US/hotel/curacao/sunscape-curacao-resort-spa/sucur" target="_blank" rel="noopener">Sunscape<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#0E93B0,#0A4E68)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 90 Q100 74 200 90 T400 84 V120 H0Z" fill="rgba(255,255,255,.18)"/><circle cx="64" cy="36" r="16" fill="rgba(255,240,190,.45)"/></svg><span class="chip nice">Nonstop premium</span><span class="loc">Seven Mile Beach · Grand Cayman</span></div>
+        <div class="card-body">
+          <h3>Kimpton Seafire / Seascape Villa</h3>
+          <div class="price"><span class="val num" data-count="6300" data-prefix="$">$0</span><span class="unit">/family · from</span></div>
+          <ul class="facts"><li><strong>Nonstop</strong> Cayman Airways from Tampa (~$450–650) · Level-1 safe</li><li>Camp Seafire + SPLASH water park; Stingray City (waist-deep, kid-perfect)</li><li>One villa (Seascape) sleeps <strong>21</strong> — nearly the whole group under one roof</li><li>In the hurricane belt — spring only</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> The slick "nonstop + one big villa" option, crystal-clear calm water, very safe.</div><div class="rev gripe"><span class="lead">Note</span> Expensive and à la carte — no all-inclusive culture; costs above Aruba.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.seafireresortandspa.com/" target="_blank" rel="noopener">Kimpton Seafire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#0AA6B8,#0C5A6E)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 86 Q100 96 200 82 T400 88 V120 H0Z" fill="rgba(255,255,255,.2)"/><circle cx="330" cy="34" r="17" fill="rgba(255,244,200,.55)"/></svg><span class="chip deluxe">The splurge</span><span class="loc">Grace Bay · Turks &amp; Caicos</span></div>
+        <div class="card-body">
+          <h3>Beaches Turks &amp; Caicos</h3>
+          <div class="price"><span class="val num" data-count="15000" data-prefix="$">$0</span><span class="unit">/family · peak (est.)</span></div>
+          <ul class="facts"><li>Grace Bay — a repeat "World's Best Beach," 100+ ft visibility</li><li>All-inclusive with age-segmented kids camps + nurseries</li><li>~1 stop via Miami · Level 2 · in the belt (spring safe)</li><li>Summer off-season roughly halves the price</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Best beach + strongest single all-inclusive kids-club resort of the set.</div><div class="rev gripe"><span class="lead">Note</span> The costliest by far — no budget competition to Beaches; villas run into six figures for the group.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.beaches.com/resorts/turks-caicos/" target="_blank" rel="noopener">Beaches T&amp;C<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-band" style="background:linear-gradient(135deg,#0C8896,#0A4E5A)"><svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 Q100 78 200 92 T400 86 V120 H0Z" fill="rgba(255,255,255,.16)"/></svg><span class="chip cheap">Divers only</span><span class="loc">Kralendijk · Bonaire</span></div>
+        <div class="card-body">
+          <h3>Plaza Beach / Sand Dollar</h3>
+          <div class="price"><span class="val num" data-count="2200" data-prefix="$">$0</span><span class="unit">/unit · room-only</span></div>
+          <ul class="facts"><li>Arguably the <strong>best water</strong> of all — the whole coast is a marine park</li><li>Below the belt — storm-safe summer, like the other ABC islands</li><li>Thin family infrastructure; infrequent connecting flights via Miami</li></ul>
+          <div class="reviews"><div class="rev love"><span class="lead">Why</span> Elite snorkeling/diving water, Level-1 safe, storm-free in summer.</div><div class="rev gripe"><span class="lead">Note</span> A dive island — weak fit for 12 kids and the priciest per-head logistics. Only if the group is really about the water itself.</div></div>
+          <div class="card-cta"><a class="btn primary" href="https://www.plazaresortbonaire.com/en/valk-kids" target="_blank" rel="noopener">Plaza Bonaire<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:24px;font-size:.9rem;color:var(--ink-2)"><strong>Rule of thumb:</strong> spring break → <strong>Puerto Rico</strong> (cheapest, no passport) or the <strong>Bahamas</strong> (water parks); summer → <strong>Curaçao</strong> (storm-safe, Aruba-clear, cheaper). Grand Cayman is the premium nonstop, Turks &amp; Caicos the splurge, Bonaire only for divers. ⚠️ Note: Sandals Emerald Bay (Exuma) is <strong>closed</strong> and rebuilding as a family resort — not available for 2027.</p>
+  </div>
+</section>
+
 <!-- DEALS -->
 <section id="deals" class="deals">
   <div class="wrap">
@@ -766,6 +877,50 @@
     });
   },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal,[data-count]').forEach(function(el){io.observe(el);});
+
+  /* location pull-down filter */
+  (function(){
+    var LOCKW={
+      'bahamas':['bahamas','nassau','exuma','baha mar'],
+      'puerto rico':['puerto rico','san juan','culebra','vieques','fajardo','rio grande','rio mar'],
+      'dominican republic':['dominican republic',' dr','punta cana','cap cana'],
+      'mexico':['mexico','riviera maya','cancún','cancun','playa del carmen','puerto aventuras','soliman bay'],
+      'costa rica':['costa rica','guanacaste','tamarindo'],
+      'aruba':['aruba','palm beach'],
+      'curacao':['curaçao','curacao'],
+      'grand cayman':['cayman'],
+      'turks':['turks','caicos','providenciales','grace bay'],
+      'antigua':['antigua'],
+      'bonaire':['bonaire'],
+      'el salvador':['el salvador','el zonte'],
+      'cruise':['tampa','port canaveral','sails from']
+    };
+    var sel=document.getElementById('locFilter'); if(!sel)return;
+    var fc=document.getElementById('fcount');
+    function finalize(){
+      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
+      document.querySelectorAll('[data-count]').forEach(function(c){if(!c._done){c._done=1;c.textContent=(c.getAttribute('data-prefix')||'')+fmt(+c.getAttribute('data-count'));}});
+      document.querySelectorAll('.fill').forEach(function(f){if(!f._done){f._done=1;f.style.width=f.getAttribute('data-pct')+'%';}});
+    }
+    sel.addEventListener('change',function(){
+      var kws=LOCKW[sel.value];
+      if(!kws){ document.querySelectorAll('.hide').forEach(function(e){e.classList.remove('hide');}); fc.textContent=''; return; }
+      finalize();
+      var shown=0;
+      document.querySelectorAll('.card').forEach(function(c){
+        var el=c.querySelector('.loc'), loc=(el?el.textContent:'').toLowerCase();
+        var m=kws.some(function(k){return loc.indexOf(k)>-1;});
+        c.classList.toggle('hide',!m); if(m)shown++;
+      });
+      document.querySelectorAll('.grid').forEach(function(g){ g.classList.toggle('hide',g.querySelectorAll('.card:not(.hide)').length===0); });
+      document.querySelectorAll('section').forEach(function(s){
+        if(!s.querySelector('.card')){ s.classList.add('hide'); return; }
+        s.classList.toggle('hide',s.querySelectorAll('.card:not(.hide)').length===0);
+      });
+      fc.textContent=shown+' option'+(shown===1?'':'s');
+      window.scrollTo({top:0,behavior:rm?'auto':'smooth'});
+    });
+  })();
 
   /* hero canvas — layered sea shimmer + sun */
   var cv=document.getElementById('sea');
